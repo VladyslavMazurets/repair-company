@@ -6,8 +6,12 @@ import HowWeWork from "./components/HowWeWork";
 import Home from "./components/Home";
 import { Navbar } from "./components/Navbar";
 import About from "./components/About";
-import WhyChooseUs from "./components/WhyChooseUs";
+import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
 import Request from "./components/Request";
+import CallOreder from "./components/CallOreder";
+import ShowCase from "./components/ShowCase/ShowCase";
+import Testimonials from './components/Testimonials';
+import ContactUs from "./components/ContactUs";
 
 function App() {
   return (
@@ -20,6 +24,10 @@ function App() {
       <Request/>
       <About/>
       <WhyChooseUs/>
+      <CallOreder/>
+      <ShowCase/>
+      <Testimonials/>
+      <ContactUs/>
       <Routes>
         {/* <Route path="/about" element={<About />}> */}
           {/* <Route path="blogs" element={<Blogs />} />

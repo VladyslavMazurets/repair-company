@@ -46,7 +46,7 @@ export const Navbar = () => {
               MEO Company
             </TypographyBar>
           </Stack>
-          <Stack marginRight={10} sx={{ display: 'block', display: 'flex', position: 'relative', flexDirection: 'row', }}>
+          <Stack marginRight={10} sx={{ display: 'flex', position: 'relative', flexDirection: 'row', }}>
             <Link style={{textDecoration: 'none'}} to='/about' > <TypographyLink> About us </TypographyLink> </Link>
             <Link style={{textDecoration: 'none'}} to='/about' > <TypographyLink> Our Services </TypographyLink> </Link>
             <Link style={{textDecoration: 'none'}} to='/experience' > <TypographyLink> Showcase </TypographyLink> </Link>

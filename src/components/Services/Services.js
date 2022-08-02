@@ -21,16 +21,6 @@ const BoxImg = styled(Box)({
     color: 'white'
 });
 
-const BoxHeader = styled(Box)({
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    textAlign: 'center',
-
-    margin: '0 0 2rem 0'
-});
-
 const BoxButton = styled(Box)({
     display: 'flex',
     justifyContent: 'center',
@@ -48,7 +38,6 @@ function Services() {
                 slidesPerView={3}
                 spaceBetween={50}
                 slidesPerGroup={3}
-                loop={true}
                 loopFillGroupWithBlank={true}
                 navigation={true}
                 modules={[Navigation]}
@@ -59,7 +48,14 @@ function Services() {
                 {
                     ServicesData.map(({ img, title, text, price }, index) => {
                         return (
-                            <SwiperSlide key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: '#fafafa', borderRadius: '20px' }}>
+                            <SwiperSlide key={index} 
+                            style={{ 
+                                display: 'flex', 
+                                flexDirection: 'column', 
+                                alignItems: 'center', 
+                                justifyContent: 'center',
+                                background: '#fafafa', 
+                                borderRadius: '20px' }}>
                                 <BoxImg>
                                     <img src={img} alt='Content img' width={130} height={130} />
                                 </BoxImg>

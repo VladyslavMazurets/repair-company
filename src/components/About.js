@@ -7,7 +7,6 @@ import ImgAbout2 from '../assets/about_img2.jpg';
 import SubHeading from '../const/SubHeading';
 
 const Item = styled(Paper)(({ theme }) => ({
-  width: '48%',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -55,23 +54,6 @@ const ButtonCont = styled(Button)({
   }
 })
 
-const Header = styled(Typography)({
-  fontFamily: 'Libre Franklin, sans-serif',
-  fontWeight: 900,
-  letterSpacing: 'noraml',
-  fontSize: 50,
-  color: 'black',
-
-});
-
-const HeaderItm = styled(Typography)({
-  fontFamily: 'Libre Franklin, sans-serif',
-  letterSpacing: 'normal',
-  fontSize: 20,
-  color: 'black',
-  marginTop: '1.5rem'
-})
-
 const HeaderContent = styled(Typography)({
   fontFamily: 'Open Sans, sans-serif',
   fontSize: 18,
@@ -80,7 +62,6 @@ const HeaderContent = styled(Typography)({
 })
 
 const Img = styled("img")({
-  opacity: '1',
   display: 'block',
   objectFit: 'fill',
   border: '0.5rem solid #96bed6'

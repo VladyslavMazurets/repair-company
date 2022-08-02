@@ -12,16 +12,16 @@ const BoxHeader = styled(Box)({
 
   const Header = styled(Typography)({
     fontFamily: 'Libre Franklin, sans-serif',
-    fontWeight: 500,
+    fontWeight: 'bold',
     fontSize: 50,
     color: 'black',
   
-    margin: '4rem 0 0 0'
+    marginTop: '2rem'
   });
 
   const HeaderItm = styled(Typography)({
     fontFamily: 'Libre Franklin, sans-serif',
-    fontSize: 20,
+    fontSize: 18,
     color: 'black',
   
     margin: '0.3rem 0 1.5rem 0'

@@ -6,13 +6,13 @@ import { FaHammer } from 'react-icons/fa';
 const WorkData = [
     {
         icon: <BsFillTelephoneFill/>,
-        title: "Apartment Inspections",
+        title: "Call or leave a message",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in tincidunt quam, id venenatis orci. Nam nec nisl at tortor lacinia sagittis. Mauris tempor tortor vitae nisl facilisis tincidunt.",
     },
 
     {
         icon: <BsFillCalculatorFill/>,
-        title: "Departure of the gauge",
+        title: "Calculation of the estimate",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in tincidunt quam, id venenatis orci. Nam nec nisl at tortor lacinia sagittis. Mauris tempor tortor vitae nisl facilisis tincidunt.",
     },
 
