@@ -41,7 +41,7 @@ export const Navbar = () => {
         <CssBaseline />
         <Toolbar disableGutters>
           <Stack sx={{ flexGrow: 1, display: 'inline-flex', flexDirection: 'row', alignItems: 'center' }} >
-            <img src={Companylogo} alt='companyLogo' style={{ width: '100px', height: '80px', margin: '0px 20px' }} />
+            <img src={Companylogo} alt='Company Logo' style={{ width: '100px', height: '80px', margin: '0px 20px' }} />
             <TypographyBar>
               MEO Company
             </TypographyBar>

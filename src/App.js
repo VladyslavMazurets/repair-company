@@ -8,10 +8,11 @@ import { Navbar } from "./components/Navbar";
 import About from "./components/About";
 import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
 import Request from "./components/Request";
-import CallOreder from "./components/CallOreder";
+import CallOrder from "./components/CallOrder";
 import ShowCase from "./components/ShowCase/ShowCase";
 import Testimonials from './components/Testimonials';
 import ContactUs from "./components/ContactUs";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -24,10 +25,11 @@ function App() {
       <Request/>
       <About/>
       <WhyChooseUs/>
-      <CallOreder/>
+      <CallOrder/>
       <ShowCase/>
       <Testimonials/>
       <ContactUs/>
+      <Footer/>
       <Routes>
         {/* <Route path="/about" element={<About />}> */}
           {/* <Route path="blogs" element={<Blogs />} />

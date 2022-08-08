@@ -1,16 +1,25 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import { Box } from '@mui/system'
 import SubHeading from '../const/SubHeading'
 import styled from '@emotion/styled'
-import { Button, Stack, TextField, Typography } from '@mui/material'
-import TextareaAutosize from '@mui/base/TextareaAutosize';
+import { Button, Stack, TextField, Typography, TextareaAutosize } from '@mui/material'
+
+import Swal from 'sweetalert2'
+import emailjs from 'emailjs-com';
+
 
 import { MdEmail } from 'react-icons/md'
 import { FaViber } from 'react-icons/fa'
 import { SiTelegram } from 'react-icons/si'
 
+import ContactBg from '../assets/contactbg.jpg';
+import TelegramQr from '../assets/telegramqr.jpg';
+
 const BoxMain = styled(Box)({
-    background: '#d6e9f0',
+    background: 'url(' + ContactBg + ')',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: '100% 50%',
+    backgroundSize: '100%',
 })
 
 const BoxSocial = styled(Box)({
@@ -26,33 +35,143 @@ const BoxSocialItem = styled(Box)({
     textAlign: 'center',
 
     marginBottom: '2rem',
-    padding: '2rem 5rem 2rem 5rem',
+    padding: '1.5rem 6rem 1.5rem 6rem',
 
     border: '1px solid transparent',
     borderRadius: '1.2rem',
-    background: '#acd6e6'
+    background: '#acd6e6',
+    transition: '0.5s',
+
+    "&:hover": {
+        background: 'white',
+        border: '1px solid blue'
+    }
 })
 
 const BoxIcon = styled(Box)({
+    color: 'blue',
     fontSize: '1.8rem',
 })
 
 const TextArea = styled(TextareaAutosize)({
+    fontSize: '1rem',
     width: '100%',
-    marginTop: '1.2rem',
+    marginTop: '1rem',
     padding: '1rem',
-    border: '2px solid blue',
+    border: '2px solid black',
     borderRadius: '0.5rem',
 
     resize: 'none',
-    background: 'none'
+    background: 'none',
+    backgroundColor: 'white',
+    transition: '0.3s',
+
+    "&:hover": {
+        border: '2px solid blue'
+    }
+})
+
+const TypographySocial = styled(Typography)({
+    fontFamily: 'Libre Franklin',
+    fontSize: 15,
+    fontWeight: 'normal',
+})
+
+const Input = styled(TextField)({
+
+    '& label.Mui-focused': {
+        color: 'blue',
+    },
+
+    '& .MuiOutlinedInput-root': {
+        borderRadius: '0.5rem',
+        backgroundColor: 'white',
+
+        '& fieldset': {
+            borderColor: 'black',
+            borderWidth: '2px'
+        },
+
+        '&:hover fieldset': {
+            borderColor: 'blue',
+            borderWidth: '2px'
+        },
+
+        '&.Mui-focused fieldset': {
+            borderColor: 'blue',
+            borderWidth: '2px'
+        },
+
+    },
 })
 
 const ButtonSocial = styled(Button)({
-    marginTop: '0.3rem'
+    padding: '0.5rem',
+    marginTop: '0.3rem',
+    fontFamily: 'Libre Franklin',
+    fontWeight: 'bold',
+    transition: '0.8s',
+
+    "&:hover": {
+        color: 'black',
+    }
+})
+
+const ButtonMail = styled(Button)({
+    marginTop: '0.5rem',
+    padding: '.5rem',
+
+    fontFamily: 'Libre Franklin',
+    fontWeight: 'bold',
+    color: 'black',
+    background: 'skyblue',
+
+    border: '1px solid transparent',
+    borderRadius: '0.5rem',
+    transition: '0.8s',
+
+    "&:hover": {
+        background: 'white',
+        border: '1px solid skyblue'
+    }
 })
 
 function ContactUs() {
+
+    const [valueName, setValueName] = useState('');
+    const form = useRef();
+
+    const ShowViber = () => {
+        Swal.fire({
+            title: 'Viber QR-code',
+            imageUrl: TelegramQr,
+            showCancelButton: true,
+            showConfirmButton: false, 
+            cancelButtonColor: '#DD6B55',
+        })
+    }
+
+    const ShowTelegram = () => {
+        Swal.fire({
+            title: 'Telegram QR-code',
+            imageUrl: TelegramQr,
+            showCancelButton: true,
+            showConfirmButton: false, 
+            cancelButtonColor: '#DD6B55',
+        })
+    }
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+    
+        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });
+      };
+
     return (
 
         <BoxMain>
@@ -65,53 +184,58 @@ function ContactUs() {
                         <BoxSocial>
                             <BoxSocialItem>
                                 <BoxIcon> <MdEmail /> </BoxIcon>
-                                <Typography> Email <br /> ogidj88@gmail.com </Typography>
-                                <ButtonSocial> Send a message </ButtonSocial>
+                                <TypographySocial> Email <br /> ogidj88@gmail.com </TypographySocial>
+                                <ButtonSocial href='mailto:ogidj88@gmail.com' target='_blank'> Send a message </ButtonSocial>
                             </BoxSocialItem>
 
                             <BoxSocialItem>
                                 <BoxIcon> <FaViber /> </BoxIcon>
-                                <Typography> Viber <br /> +380 97 897 50 64 </Typography>
-                                <ButtonSocial> Send a message </ButtonSocial>
+                                <TypographySocial> Viber <br /> +380 97 897 50 64 </TypographySocial>
+                                <ButtonSocial onClick={ShowViber}> Send a message </ButtonSocial>
                             </BoxSocialItem>
 
                             <BoxSocialItem>
                                 <BoxIcon> <SiTelegram /> </BoxIcon>
-                                <Typography> Telegram <br /> +380 97 897 50 64 </Typography>
-                                <ButtonSocial> Send a message </ButtonSocial>
+                                <TypographySocial> Telegram <br /> +380 97 897 50 64 </TypographySocial>
+                                <ButtonSocial onClick={ShowTelegram}> Send a message </ButtonSocial>
                             </BoxSocialItem>
                         </BoxSocial>
                     </Stack>
                 </Box>
 
-                <Box component='form' 
-                style={{ }}>
-                    
-                    <TextField
-                        required
+                <Box component='form' ref={form} onSubmit={sendEmail} style={{ marginTop: '2rem' }}>
+
+                    <Input
                         label="Your Full Name"
                         type='text'
                         name='name'
-                        margin="normal"
+                        value={valueName}
+                        onChange={e => setValueName(e.target.value.replace(/[^a-zа-яё\s]/gi, ''))}
+                        InputProps={{
+                            inputProps: { minLength: 0, maxLength: 25 },
+                        }}
                         fullWidth
+                        margin='normal'
+                        required
                     />
 
-                    <TextField
-                        required
+                    <Input
                         label="Your Email"
                         type='email'
                         name='email'
-                        margin="normal"
+                        margin='normal'
                         fullWidth
+                        required
                     />
 
                     <TextArea
                         name='text'
                         placeholder="Your Message"
-                        minRows={7}
+                        minRows={15}
+                        required
                     />
 
-                    <Button> Send a message </Button>
+                    <ButtonMail type='submit' size='large' variant="outlined"> Send a message </ButtonMail>
 
                 </Box>
 

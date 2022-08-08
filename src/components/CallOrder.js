@@ -60,7 +60,7 @@ const ButtonOrder = styled(Button)({
     }
 })
 
-function CallOreder() {
+function CallOrder() {
 
     const [value, setValue] = useState('');
 
@@ -121,4 +121,4 @@ function CallOreder() {
     )
 }
 
-export default CallOreder
+export default CallOrder

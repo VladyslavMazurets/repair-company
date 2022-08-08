@@ -6,7 +6,8 @@ import FonRequest from '../assets/fon_request.jpg';
 
 const BoxMain = styled(Box)({
   background: 'url(' + FonRequest + ')', 
-  width: '100%', 
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: '100%',
   height: '420px', 
   display: 'flex', 
   justifyContent: 'center'

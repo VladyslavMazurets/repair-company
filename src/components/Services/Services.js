@@ -48,14 +48,15 @@ function Services() {
                 {
                     ServicesData.map(({ img, title, text, price }, index) => {
                         return (
-                            <SwiperSlide key={index} 
-                            style={{ 
-                                display: 'flex', 
-                                flexDirection: 'column', 
-                                alignItems: 'center', 
-                                justifyContent: 'center',
-                                background: '#fafafa', 
-                                borderRadius: '20px' }}>
+                            <SwiperSlide key={index}
+                                style={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    background: '#fafafa',
+                                    borderRadius: '20px'
+                                }}>
                                 <BoxImg>
                                     <img src={img} alt='Content img' width={130} height={130} />
                                 </BoxImg>
@@ -70,16 +71,16 @@ function Services() {
             <BoxButton>
                 <Button
                     style={{
+                        fontFamily: 'Libre Franklin, sans-serif',
+                        padding: '0.8rem',
                         marginRight: '1.5rem',
                         background: '#024966',
-                        fontFamily: 'Bold',
-                        letterSpacing: '0.2em',
                     }} size='large' variant="contained"> Get free consultation </Button>
 
                 <Button style={{
+                    fontFamily: 'Libre Franklin, sans-serif',
+                    padding: '0.8rem',
                     background: 'none',
-                    fontFamily: 'Bold',
-                    letterSpacing: '0.2em',
                     color: 'white',
                     border: '2px solid white',
                 }} variant="outlined"> About Us </Button>
