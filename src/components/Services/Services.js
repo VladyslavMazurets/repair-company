@@ -30,7 +30,7 @@ const BoxButton = styled(Box)({
 
 function Services() {
     return (
-        <Box style={{ background: '#96bed6' }}>
+        <Box id='services' style={{ background: '#96bed6' }}>
 
             <SubHeading title="Services We Provide" content="Whatever work you need, we can handle with this." />
 

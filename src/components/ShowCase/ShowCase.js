@@ -23,7 +23,7 @@ const BoxMaim = styled(Box)({
 })
 
 const BoxImg = styled(Box)({
-    padding: '1rem 0 0.5rem 0'
+    padding: '1rem 0 1rem 0'
 });
 
 const SwiperTitle = styled(Typography)({
@@ -42,7 +42,7 @@ const SwiperDate = styled(Typography)({
 function ShowCase() {
     return (
         <>
-            <BoxMaim>
+            <BoxMaim id='showCase'>
 
                 <SubHeading title="Showcase" content="Every month, we repair new apartments in Kyiv and Kyiv region. We have something to show you." />
 
@@ -67,7 +67,7 @@ function ShowCase() {
                                     background: '#fffef0',
                                 }}>
                                 <BoxImg>
-                                    <img src={img} alt='Choose Img' />
+                                    <img style={{ display: 'block'}} src={img} alt='Choose Img' />
                                 </BoxImg>
                                 <SwiperTitle> {title} </SwiperTitle>
                                 <SwiperDate> {date} </SwiperDate>

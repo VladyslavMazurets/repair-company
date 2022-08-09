@@ -1,7 +1,6 @@
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
-import { Link } from 'react-router-dom';
-import { Toolbar, Typography, CssBaseline, Stack, styled } from '@mui/material';
+import { Toolbar, Typography, CssBaseline, Stack, styled, Link } from '@mui/material';
 import Companylogo from '../assets/companylogo.png';
 
 
@@ -47,11 +46,11 @@ export const Navbar = () => {
             </TypographyBar>
           </Stack>
           <Stack marginRight={10} sx={{ display: 'flex', position: 'relative', flexDirection: 'row', }}>
-            <Link style={{textDecoration: 'none'}} to='/about' > <TypographyLink> About us </TypographyLink> </Link>
-            <Link style={{textDecoration: 'none'}} to='/about' > <TypographyLink> Our Services </TypographyLink> </Link>
-            <Link style={{textDecoration: 'none'}} to='/experience' > <TypographyLink> Showcase </TypographyLink> </Link>
-            <Link style={{textDecoration: 'none'}} to='/testimonials'> <TypographyLink> Testimonials </TypographyLink> </Link>
-            <Link style={{textDecoration: 'none'}} to='/contact' > <TypographyLink> Contacts </TypographyLink> </Link>
+            <Link style={{textDecoration: 'none'}} href="#about" > <TypographyLink> About us </TypographyLink> </Link>
+            <Link style={{textDecoration: 'none'}} href="#services"  > <TypographyLink> Our Services </TypographyLink> </Link>
+            <Link style={{textDecoration: 'none'}} href="#showCase" > <TypographyLink> Showcase </TypographyLink> </Link>
+            <Link style={{textDecoration: 'none'}} href="#testimonials"> <TypographyLink> Testimonials </TypographyLink> </Link>
+            <Link style={{textDecoration: 'none'}} href="#contactUs"> <TypographyLink> Contacts </TypographyLink> </Link>
           </Stack>
         </Toolbar>
       </AppBar>

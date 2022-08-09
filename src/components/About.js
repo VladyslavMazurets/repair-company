@@ -69,7 +69,7 @@ const Img = styled("img")({
 
 export const About = () => {
   return (
-    <Box style={{ background: '#96bed6' }}>
+    <Box id='about' style={{ background: '#96bed6' }}>
 
       <Stack direction="row"
         justifyContent="center"

@@ -20,6 +20,7 @@ const BoxMain = styled(Box)({
     backgroundRepeat: 'no-repeat',
     backgroundPosition: '100% 50%',
     backgroundSize: '100%',
+    paddingBottom: '4rem'
 })
 
 const BoxSocial = styled(Box)({
@@ -174,7 +175,7 @@ function ContactUs() {
 
     return (
 
-        <BoxMain>
+        <BoxMain id='contactUs'>
 
             <SubHeading title='Contact Us' content='Call us or fill out the form below and describe your problem.' />
 
