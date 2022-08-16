@@ -7,21 +7,20 @@ const BoxHeader = styled(Box)({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    marginBottom: '2rem'
+    padding: '1rem'
   });
 
   const Header = styled(Typography)({
-    fontFamily: 'Libre Franklin, sans-serif',
-    fontWeight: 'bold',
-    fontSize: 50,
+    fontFamily: 'Libre Franklin',
+    fontSize: 54,
     color: 'black',
   
     marginTop: '2rem'
   });
 
   const HeaderItm = styled(Typography)({
-    fontFamily: 'Libre Franklin, sans-serif',
-    fontSize: 18,
+    fontFamily: 'Libre Franklin',
+    fontSize: 20,
     color: 'black',
   
     margin: '0.3rem 0 1.5rem 0'

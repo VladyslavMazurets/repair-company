@@ -46,14 +46,17 @@ const BoxSocial = styled(Box)({
     paddingBottom: '1rem'
 });
 
+const Img = styled("img")({
+    width: '120px', 
+    height: '100px', 
+    display: 'block'
+})
+
 const BoxIcon = styled(Box)({
     display: 'flex',
     flexDirection: 'row',
 });
 
-const LinkContact = styled(Link)({
-    marginBottom: '10rem',
-});
 
 function Footer() {
 
@@ -62,7 +65,7 @@ function Footer() {
             <BoxMain>
 
                 <BoxCompany>
-                    <img src={Companylogo} alt='Company Logo' style={{ width: '120px', height: '100px', display: 'block' }} />
+                    <Img src={Companylogo} alt='Company Logo'/>
                     <Typography> MEO company </Typography>
                     <Typography style={{ fontSize: '16px', fontFamily: 'Popins', marginTop: '0.5rem' }}>
                         MEO company is a company that has been installing and renovating apartments in Kyiv & Kyiv region for 10 years.
@@ -93,15 +96,15 @@ function Footer() {
                     </Box>
 
                     <Box style={{ display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
-                        <LinkContact href='tel:+380978975064' color="inherit" underline="hover">
+                        <Link href='tel:+380978975064' color="inherit" underline="hover" style={{ marginBottom: '0.5rem'}}>
                             <Typography> +380 97 897 50 64 </Typography>
-                        </LinkContact>
-                        <LinkContact href='tel:+380978975064' color="inherit" underline="hover">
+                        </Link>
+                        <Link href='tel:+380978975064' color="inherit" underline="hover" style={{ marginBottom: '0.5rem'}}>
                             <Typography> +380 97 897 50 64 </Typography>
-                        </LinkContact>
-                        <LinkContact href='mailto:ogidj88@gmail.com' color="inherit" underline="hover">
+                        </Link>
+                        <Link href='mailto:ogidj88@gmail.com' color="inherit" underline="hover">
                             <Typography> ogidj88@gmail.com </Typography>
-                        </LinkContact>
+                        </Link>
                     </Box>
                 </BoxContact>
 

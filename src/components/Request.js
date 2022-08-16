@@ -4,13 +4,21 @@ import { Typography, Button, styled } from '@mui/material';
 
 import FonRequest from '../assets/fon_request.jpg';
 
-const BoxMain = styled(Box)({
-  background: 'url(' + FonRequest + ')', 
+const BoxBg = styled(Box)({
+  background: 'url(' + FonRequest + ')',
   backgroundRepeat: 'no-repeat',
   backgroundSize: '100%',
-  height: '420px', 
-  display: 'flex', 
+  height: '420px',
+  display: 'flex',
   justifyContent: 'center'
+})
+
+const BoxMain = styled(Box)({
+  display: 'flex',
+  justifyContent: 'center',
+  margin: '0 auto',
+  padding: '2rem',
+  width: '75%',
 })
 
 const BoxRequest = styled(Box)({
@@ -53,14 +61,16 @@ const ButtonRequest = styled(Button)({
 
 const Request = () => {
   return (
-    <BoxMain>
-      <BoxRequest>
-        <RequestHeader> Request Free Estimate! </RequestHeader>
-        <div style={{ background: 'black', height: '3px', margin: '1rem 0', width: '5%' }} />
-        <RequestContent> Press the button, and we will contact you soon to clear the details! </RequestContent>
-        <ButtonRequest size='large' variant="outlined"> Send a request </ButtonRequest>
-      </BoxRequest>
-    </BoxMain>
+    <BoxBg>
+      <BoxMain>
+        <BoxRequest>
+          <RequestHeader> Request Free Estimate! </RequestHeader>
+          <div style={{ background: 'black', height: '3px', margin: '1rem 0', width: '5%' }} />
+          <RequestContent> Press the button, and we will contact you soon to clear the details! </RequestContent>
+          <ButtonRequest href='#callOrder' size='large' variant="outlined"> Send a request </ButtonRequest>
+        </BoxRequest>
+      </BoxMain>
+    </BoxBg>
   )
 }
 

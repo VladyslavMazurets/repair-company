@@ -15,21 +15,28 @@ import "swiper/css/pagination";
 // import required modules
 import { Navigation } from "swiper";
 
-const BoxMaim = styled(Box)({
+const BoxShow = styled(Box)({
+    padding: '2rem 2rem 5rem 2rem',
     background: 'url(' + ShowCaseBg + ')',
     backgroundPosition: '100% 2%',
     backgroundRepeat: 'no-repeat',
-    backgroundSize: '100%'
+    backgroundSize: '100%',
+})
+
+const BoxMaim = styled(Box)({
+    margin: '0 auto',
+    padding: '2rem',
+    width: '75%',
 })
 
 const BoxImg = styled(Box)({
-    padding: '1rem 0 1rem 0'
+    padding: '1.5rem'
 });
 
 const SwiperTitle = styled(Typography)({
     fontFamily: 'Open Sans, sans-serif',
     fontWeight: 'bold',
-    fontSize: 19,
+    fontSize: 22,
     marginBottom: '0.5rem'
 })
 
@@ -42,41 +49,43 @@ const SwiperDate = styled(Typography)({
 function ShowCase() {
     return (
         <>
-            <BoxMaim id='showCase'>
+            <BoxShow id='showCase'>
+                <BoxMaim>
 
-                <SubHeading title="Showcase" content="Every month, we repair new apartments in Kyiv and Kyiv region. We have something to show you." />
+                    <SubHeading title="Showcase" content="Every month, we repair new apartments in Kyiv and Kyiv region. We have something to show you." />
 
-                <Swiper
-                    slidesPerView={3}
-                    spaceBetween={50}
-                    loopFillGroupWithBlank={true}
-                    navigation={true}
-                    modules={[Navigation]}
-                    className="mySwiper"
+                    <Swiper
+                        slidesPerView={3}
+                        spaceBetween={50}
+                        loopFillGroupWithBlank={true}
+                        navigation={true}
+                        modules={[Navigation]}
+                        className="mySwiper"
 
-                    style={{ padding: ' 0 3rem 6rem 3rem', width: '80%' }}
-                >
-                    {ShowCaseData.map(({ img, title, date }, index) => {
-                        return (
-                            <SwiperSlide key={index}
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    background: '#fffef0',
-                                }}>
-                                <BoxImg>
-                                    <img style={{ display: 'block'}} src={img} alt='Choose Img' />
-                                </BoxImg>
-                                <SwiperTitle> {title} </SwiperTitle>
-                                <SwiperDate> {date} </SwiperDate>
-                            </SwiperSlide>
-                        )
-                    })
-                    }
-                </Swiper>
-            </BoxMaim>
+                        style={{ padding: ' 2rem 3rem 6rem 3rem' }}
+                    >
+                        {ShowCaseData.map(({ img, title, date }, index) => {
+                            return (
+                                <SwiperSlide key={index}
+                                    style={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        background: '#fffef0',
+                                    }}>
+                                    <BoxImg>
+                                        <img style={{ display: 'block' }} src={img} alt='Choose Img' />
+                                    </BoxImg>
+                                    <SwiperTitle> {title} </SwiperTitle>
+                                    <SwiperDate> {date} </SwiperDate>
+                                </SwiperSlide>
+                            )
+                        })
+                        }
+                    </Swiper>
+                </BoxMaim>
+            </BoxShow>
         </>
     )
 }

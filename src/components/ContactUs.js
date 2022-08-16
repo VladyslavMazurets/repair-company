@@ -15,12 +15,18 @@ import { SiTelegram } from 'react-icons/si'
 import ContactBg from '../assets/contactbg.jpg';
 import TelegramQr from '../assets/telegramqr.jpg';
 
-const BoxMain = styled(Box)({
+const BoxBg = styled(Box)({
     background: 'url(' + ContactBg + ')',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: '100% 50%',
     backgroundSize: '100%',
-    paddingBottom: '4rem'
+    padding: '2rem'
+})
+
+const BoxMain = styled(Box)({
+    margin: '0 auto',
+    padding: '2rem',
+    width: '75%'
 })
 
 const BoxSocial = styled(Box)({
@@ -147,7 +153,7 @@ function ContactUs() {
             title: 'Viber QR-code',
             imageUrl: TelegramQr,
             showCancelButton: true,
-            showConfirmButton: false, 
+            showConfirmButton: false,
             cancelButtonColor: '#DD6B55',
         })
     }
@@ -157,91 +163,104 @@ function ContactUs() {
             title: 'Telegram QR-code',
             imageUrl: TelegramQr,
             showCancelButton: true,
-            showConfirmButton: false, 
+            showConfirmButton: false,
             cancelButtonColor: '#DD6B55',
         })
     }
 
     const sendEmail = (e) => {
         e.preventDefault();
-    
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
-          .then((result) => {
-              console.log(result.text);
-          }, (error) => {
-              console.log(error.text);
-          });
-      };
+
+        emailjs.sendForm('service_qv77142', 'template_pn7u2to', form.current, 'gE4_CBdCqC3xQNgET')
+        .then((result) => {
+            console.log(result.text);
+            Swal.fire({
+                icon: 'success',
+                title: 'Message sent sucessfully'
+            })
+        }, (error) => {
+            console.log(error.text);
+            Swal.fire({
+                icon: 'error',
+                title: "Something went wrong",
+                text: error.text,
+            })
+        });
+        e.target.reset({"values": {}}, setValueName(''));
+
+    };
 
     return (
 
-        <BoxMain id='contactUs'>
+        <BoxBg id='contactUs'>
+            <BoxMain>
 
-            <SubHeading title='Contact Us' content='Call us or fill out the form below and describe your problem.' />
+                <SubHeading title='Contact Us' content='Call us or fill out the form below and describe your problem.' />
 
-            <Stack direction='row' alignItems='flex-start' justifyContent="center" spacing={15}>
-                <Box>
-                    <Stack spacing={3}>
-                        <BoxSocial>
-                            <BoxSocialItem>
-                                <BoxIcon> <MdEmail /> </BoxIcon>
-                                <TypographySocial> Email <br /> ogidj88@gmail.com </TypographySocial>
-                                <ButtonSocial href='mailto:ogidj88@gmail.com' target='_blank'> Send a message </ButtonSocial>
-                            </BoxSocialItem>
+                <Stack direction='row' alignItems='flex-start' justifyContent="center" spacing={15}>
+                    <Box>
+                        <Stack spacing={3}>
+                            <BoxSocial>
+                                <BoxSocialItem>
+                                    <BoxIcon> <MdEmail /> </BoxIcon>
+                                    <TypographySocial> Email <br /> ogidj88@gmail.com </TypographySocial>
+                                    <ButtonSocial href='mailto:ogidj88@gmail.com' target='_blank'> Send a message </ButtonSocial>
+                                </BoxSocialItem>
 
-                            <BoxSocialItem>
-                                <BoxIcon> <FaViber /> </BoxIcon>
-                                <TypographySocial> Viber <br /> +380 97 897 50 64 </TypographySocial>
-                                <ButtonSocial onClick={ShowViber}> Send a message </ButtonSocial>
-                            </BoxSocialItem>
+                                <BoxSocialItem>
+                                    <BoxIcon> <FaViber /> </BoxIcon>
+                                    <TypographySocial> Viber <br /> +380 97 897 50 64 </TypographySocial>
+                                    <ButtonSocial onClick={ShowViber}> Show QR-code </ButtonSocial>
+                                </BoxSocialItem>
 
-                            <BoxSocialItem>
-                                <BoxIcon> <SiTelegram /> </BoxIcon>
-                                <TypographySocial> Telegram <br /> +380 97 897 50 64 </TypographySocial>
-                                <ButtonSocial onClick={ShowTelegram}> Send a message </ButtonSocial>
-                            </BoxSocialItem>
-                        </BoxSocial>
-                    </Stack>
-                </Box>
+                                <BoxSocialItem>
+                                    <BoxIcon> <SiTelegram /> </BoxIcon>
+                                    <TypographySocial> Telegram <br /> +380 97 897 50 64 </TypographySocial>
+                                    <ButtonSocial onClick={ShowTelegram}> Show QR-code </ButtonSocial>
+                                </BoxSocialItem>
+                            </BoxSocial>
+                        </Stack>
+                    </Box>
 
-                <Box component='form' ref={form} onSubmit={sendEmail} style={{ marginTop: '2rem' }}>
+                    <form component='form' ref={form} onSubmit={sendEmail} style={{ marginTop: '2rem' }}>
 
-                    <Input
-                        label="Your Full Name"
-                        type='text'
-                        name='name'
-                        value={valueName}
-                        onChange={e => setValueName(e.target.value.replace(/[^a-zа-яё\s]/gi, ''))}
-                        InputProps={{
-                            inputProps: { minLength: 0, maxLength: 25 },
-                        }}
-                        fullWidth
-                        margin='normal'
-                        required
-                    />
+                        <Input
+                            label="Your Full Name"
+                            type='text'
+                            name='name'
+                            value={valueName}
+                            onChange={e => setValueName(e.target.value.replace(/[^a-zа-яё\s]/gi, ''))}
+                            InputProps={{
+                                inputProps: { minLength: 0, maxLength: 25 },
+                            }}
+                            fullWidth
+                            margin='normal'
+                            required
+                        />
 
-                    <Input
-                        label="Your Email"
-                        type='email'
-                        name='email'
-                        margin='normal'
-                        fullWidth
-                        required
-                    />
+                        <Input
+                            label="Your Email"
+                            type='email'
+                            name='email'
+                            margin='normal'
+                            fullWidth
+                            required
+                        />
 
-                    <TextArea
-                        name='text'
-                        placeholder="Your Message"
-                        minRows={15}
-                        required
-                    />
+                        <TextArea
+                            name='text'
+                            placeholder="Your Message"
+                            minRows={15}
+                            required
+                        />
 
-                    <ButtonMail type='submit' size='large' variant="outlined"> Send a message </ButtonMail>
+                        <ButtonMail type='submit' size='large' variant="outlined"> Send a message </ButtonMail>
 
-                </Box>
+                    </form>
 
-            </Stack>
-        </BoxMain>
+                </Stack>
+            </BoxMain>
+        </BoxBg>
     )
 }
 

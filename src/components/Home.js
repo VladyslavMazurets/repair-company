@@ -3,18 +3,25 @@ import { Box, styled, Typography, Button } from '@mui/material';
 
 import HomeImg from '../../src/assets/homeremont.jpg';
 
-const BoxMain = styled(Box)({
+const BoxHome = styled(Box)({
     background: 'url(' + HomeImg + ')',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    height: '977px'
+    height: '920px'
+})
+
+const BoxMain = styled(Box)({
+    position: 'absolute',
+    margin: '0 auto',
+    padding: '2rem',
+    top: '25%',
+    left: '15%',
+    width: '75%',
 })
 
 const BoxWeDo = styled(Box)({
     position: 'relative',
-    width: '30%',
-    top: '23%',
-    left: '15%',
+    width: '35%',
     display: 'flex',
     justifyContent: 'flex-start',
     flexDirection: 'column'
@@ -77,26 +84,28 @@ const ButtonCont = styled(Button)({
 
 function Home() {
     return (
-        <BoxMain>
-            <BoxWeDo>
-                <TypographyWeDo>
-                    We Shall <br /> Do Good <br /> Work
-                </TypographyWeDo>
+        <BoxHome>
+            <BoxMain>
+                <BoxWeDo>
+                    <TypographyWeDo>
+                        We Shall <br /> Do Good <br /> Work
+                    </TypographyWeDo>
 
-                <div style={{ background: '#508192', height: '3px', margin: '1rem 0', width: '100px' }} />
+                    <div style={{ background: '#508192', height: '3px', margin: '1rem 0', width: '100px' }} />
 
-                <TypographyWeDoItem>
-                    Professional installing, uninstalling and reconstruction
-                    of your apartment!
-                </TypographyWeDoItem>
+                    <TypographyWeDoItem>
+                        Professional installing, uninstalling and reconstruction
+                        of your apartment!
+                    </TypographyWeDoItem>
 
-                <BoxButton>
-                    <ButtonServ size='large' variant="contained"> Our Services </ButtonServ>
-                    <ButtonCont variant="outlined"> Contact Us </ButtonCont>
-                </BoxButton>
+                    <BoxButton>
+                        <ButtonServ href='#services' size='large' variant="contained"> Our Services </ButtonServ>
+                        <ButtonCont href='#contactUs' variant="outlined"> Contact Us </ButtonCont>
+                    </BoxButton>
 
-            </BoxWeDo>
-        </BoxMain>
+                </BoxWeDo>
+            </BoxMain>
+        </BoxHome>
     )
 }
 

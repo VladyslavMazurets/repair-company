@@ -7,21 +7,27 @@ import WorkData from '../const/WorkData';
 
 import SubHeading from '../const/SubHeading';
 
-const BoxItem = styled(Box)(({ theme }) => ({
+const BoxMain = styled(Box)({
+  margin: '0 auto',
+  padding: '2rem',
+  width: '75%',
+})
+
+const BoxItem = styled(Box)({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-around',
-  maxWidth: '50%'
-}));
+  maxWidth: '75%',
+});
 
 const BoxContent = styled(Box)({
   display: 'flex',
   textAlign: 'center',
   flexDirection: 'column',
-  maxWidth: '60%'
+  maxWidth: '65%'
 });
 
-const BoxMain = styled(Box)({
+const BoxWork = styled(Box)({
   display: 'flex',
   justifyContent: 'center',
   paddingBottom: '1rem'
@@ -53,27 +59,29 @@ function HowWeWork() {
   return (
 
     <Box style={{ background: '#85aec7' }}>
+      <BoxMain>
 
-      <SubHeading title="How We Work" content="Need a apartment repair? Contact us, and we'll do the work" />
+        <SubHeading title="How We Work" content="Need a apartment repair? Contact us, and we'll do the work" />
 
-      {WorkData.map(({ icon, title, text }, index) => {
-        return (
+        {WorkData.map(({ icon, title, text }, index) => {
+          return (
 
-          <BoxMain key={index}>
-            <BoxItem>
-              <BoxIcon> {icon} </BoxIcon>
-              <div style={{ background: 'white', height: '3px', margin: '1rem 0', width: '5%' }} />
-              <BoxContent>
-                <ItemHeader> {title} </ItemHeader>
-                <ItemContent> {text} </ItemContent>
-              </BoxContent>
-            </BoxItem>
-          </BoxMain>
+            <BoxWork key={index}>
+              <BoxItem>
+                <BoxIcon> {icon} </BoxIcon>
+                <div style={{ background: 'white', height: '3px', margin: '1rem 0', width: '5%' }} />
+                <BoxContent>
+                  <ItemHeader> {title} </ItemHeader>
+                  <ItemContent> {text} </ItemContent>
+                </BoxContent>
+              </BoxItem>
+            </BoxWork>
 
-        )
-      })
-      }
+          )
+        })
+        }
 
+      </BoxMain>
     </Box>
   )
 }

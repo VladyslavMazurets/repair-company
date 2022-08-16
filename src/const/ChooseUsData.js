@@ -40,7 +40,7 @@ const SwiperData = [
 
     {
         img: Img6,
-        title: "Payment after completion of work",
+        title: "Payment after",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in tincidunt quam, id venenatis orci.",
     },
 

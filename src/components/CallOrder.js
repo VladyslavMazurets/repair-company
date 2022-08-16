@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 
 import CallBg from '../assets/order_background.jpg';
 
-const BoxMain = styled(Box)({
+const BoxBg = styled(Box)({
     backgroundImage: 'url(' + CallBg + ')',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: '100% 30%',
@@ -16,11 +16,17 @@ const BoxMain = styled(Box)({
     height: '800px'
 })
 
+const BoxMain = styled(Box)({
+    position: 'relative',
+    margin: '0 auto',
+    padding: '2rem',
+    width: '75%',
+    top: '10%',
+})
+
 const BoxContent = styled(Box)({
     position: 'relative',
-    top: '15%',
-    left: '15%',
-    width: '30%',
+    width: '35%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'start',
@@ -82,42 +88,44 @@ function CallOrder() {
                     text: error.text,
                 })
             });
-        e.target.reset({ "values": {} });
+        e.target.reset(setValue(''));
 
     };
 
     return (
-        <BoxMain>
-            <BoxContent>
-                <Header> There is no one to repair your apartment? </Header>
-                <div style={{ background: 'white', height: '3px', margin: '1.5rem 0', width: '15%' }} />
-                <Content> Fill the form right now and we'll call you back to fix it as soon as possible. </Content>
-                <BoxSend>
-                    <form onSubmit={sendPhoneNumber}>
+        <BoxBg id="callOrder">
+            <BoxMain>
+                <BoxContent>
+                    <Header> There is no one to repair your apartment? </Header>
+                    <div style={{ background: 'white', height: '3px', margin: '1.5rem 0', width: '15%' }} />
+                    <Content> Fill the form right now and we'll call you back to fix it as soon as possible. </Content>
+                    <BoxSend>
+                        <form onSubmit={sendPhoneNumber}>
 
-                        <TextField
-                            label="Phone number"
-                            type='tel'
-                            name='phone'
-                            InputProps={{
-                                inputProps: { minLength: 10, maxLength: 10 },
-                                startAdornment: <InputAdornment position='start'> +38 </InputAdornment>,
-                            }}
-                            margin="normal"
-                            fullWidth
-                            variant="outlined"
-                            value={value}
-                            onChange={e => setValue(e.target.value.replace(/\D/g, ''))}
-                            error={((value.length) > 0) && ((value.length) < 10)}
-                            required
-                        />
+                            <TextField
+                                label="Phone number"
+                                type='tel'
+                                name='phone'
+                                InputProps={{
+                                    inputProps: { minLength: 10, maxLength: 10 },
+                                    startAdornment: <InputAdornment position='start'> +38 </InputAdornment>,
+                                }}
+                                margin="normal"
+                                fullWidth
+                                variant="outlined"
+                                value={value}
+                                onChange={e => setValue(e.target.value.replace(/\D/g, ''))}
+                                error={((value.length) > 0) && ((value.length) < 10)}
+                                required
+                            />
 
-                        <ButtonOrder type='sabmit' size='large' variant="outlined"> Send a request </ButtonOrder>
+                            <ButtonOrder type='sabmit' size='large' variant="outlined"> Send a request </ButtonOrder>
 
-                    </form>
-                </BoxSend>
-            </BoxContent>
-        </BoxMain>
+                        </form>
+                    </BoxSend>
+                </BoxContent>
+            </BoxMain>
+        </BoxBg>
     )
 }
 
