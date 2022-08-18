@@ -1,40 +1,156 @@
-import React from 'react'
-import { Box } from '@mui/system'
-import { Typography, Button } from '@mui/material'
+import React from 'react';
+import { Box, styled } from '@mui/system';
+import { Typography, Button, Stack } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import ServicesData from '../../const/ServicesData';
 import '../Services/Services.css';
 
 // Import Swiper styles
-import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // import required modules
 import { Navigation } from "swiper";
-import styled from 'styled-components';
 import SubHeading from '../../const/SubHeading';
 
-const BoxMain = styled(Box)({
-    padding: '2rem',
+const BoxMain = styled(Box)(({ theme }) => ({
     margin: '0 auto',
     padding: '2rem',
     width: '75%',
-})
 
-const BoxImg = styled(Box)({
-    margin: '2rem 0'
-});
+    [theme.breakpoints.down("md")]: {
+        width: '90%',
+    },
+
+    [theme.breakpoints.down("sm")]: {
+        width: '100%',
+    }
+}))
+
+const StackCart = styled(Stack)({
+    textAlign: 'center',
+    minHeight: '100%',
+    margin: '0 2rem',
+
+})
 
 const BoxButton = styled(Box)({
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
     marginBottom: '1rem'
 });
 
-function Services() {
+const Img = styled("img")(({ theme }) => ({
+    width: 100,
+    height: 100,
+    marginTop: '1rem',
+
+    [theme.breakpoints.down(1570)]: {
+        width: 85,
+        height: 85
+    },
+
+    [theme.breakpoints.down('sm')]: {
+        width: 80,
+        height: 80
+    },
+
+    [theme.breakpoints.down(470)]: {
+        width: 60,
+        height: 60
+    }
+}))
+
+const Title = styled(Typography)(({ theme }) => ({
+    fontFamily: 'Libre Franklin',
+    fontSize: 25,
+
+    [theme.breakpoints.down(1570)]: {
+        fontSize: 21
+    },
+
+    [theme.breakpoints.down("sm")]: {
+        fontSize: 20
+    },
+
+    [theme.breakpoints.down(470)]: {
+        fontSize: 17
+    }
+}))
+
+const Text = styled(Typography)(({ theme }) => ({
+    fontFamily: 'Libre Franklin',
+    fontSize: 18,
+
+    [theme.breakpoints.down(1570)]: {
+        fontSize: 15
+    },
+
+    [theme.breakpoints.down("sm")]: {
+        fontSize: 14
+    },
+
+    [theme.breakpoints.down(470)]: {
+        fontSize: "4px"
+    }
+}))
+
+const Price = styled(Typography)(({ theme }) => ({
+    fontFamily: 'Libre Franklin',
+    fontSize: 22,
+
+    [theme.breakpoints.down(1570)]: {
+        fontSize: 19
+    },
+
+    [theme.breakpoints.down("sm")]: {
+        fontSize: 18
+    },
+
+    [theme.breakpoints.down(470)]: {
+        fontSize: 10
+    }
+}))
+
+const ButtonGet = styled(Button)(({ theme }) => ({
+    fontFamily: 'Libre Franklin',
+    marginRight: '1.5rem',
+    background: '#024966',
+
+    [theme.breakpoints.down("sm")]: {
+        marginRight: '1.5rem',
+        padding: '10px',
+        fontSize: '13px',
+    },
+
+    [theme.breakpoints.down(460)]: {
+        marginRight: '10px',
+        padding: '5px',
+        fontSize: '10px',
+
+    }
+}))
+
+const ButtonAbout = styled(Button)(({ theme }) => ({
+    fontFamily: 'Libre Franklin',
+    background: 'none',
+    color: 'white',
+    border: '1px solid #0f2b36',
+
+    [theme.breakpoints.down("sm")]: {
+        padding: '10px',
+        fontSize: '13px',
+    },
+
+    [theme.breakpoints.down(460)]: {
+        padding: '5px',
+        fontSize: '10px',
+
+    }
+}))
+
+function Services2() {
     return (
         <Box id='services' style={{ background: '#96bed6' }}>
             <BoxMain>
@@ -48,52 +164,73 @@ function Services() {
                     loopFillGroupWithBlank={true}
                     navigation={true}
                     modules={[Navigation]}
+                    speed={1000}
+                    breakpoints={{
+                        320: {
+                            slidesPerView: 1,
+                            slidesPerGroup: 1,
+                        },
+                        1124: {
+                            slidesPerView: 2,
+                            slidesPerGroup: 2,
+                        },
+                        1350: {
+                            slidesPerView: 3,
+                            slidesPerGroup: 3,
+                        }
+
+                    }}
                     className="mySwiper"
 
-                    style={{ padding: ' 0 3rem 3.5rem 3rem' }}
+                    style={{
+                        padding: ' 0 3rem 3.5rem 3rem'
+                    }}
                 >
                     {
                         ServicesData.map(({ img, title, text, price }, index) => {
                             return (
-                                <SwiperSlide key={index}
+                                <SwiperSlide
+                                    key={index}
                                     style={{
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        alignItems: 'center',
                                         background: '#fafafa',
-                                        borderRadius: '20px'
+                                        borderRadius: '20px',
+                                        height: 'auto'
                                     }}>
-                                    <BoxImg>
-                                        <img src={img} alt='Content img' width={100} height={100} />
-                                    </BoxImg>
-                                    <Typography style={{ fontFamily: 'Open Sans, sans-serif', fontWeight: 700, letterSpacing: 'normal', fontSize: 25, marginBottom: '2rem' }} > {title} </Typography>
-                                    <Typography style={{ fontFamily: 'Open Sans, sans-serif', fontSize: 18, margin: '0 2rem 2rem 2rem', textAlign: 'center' }}> {text} </Typography>
-                                    <Typography style={{ fontFamily: 'Open Sans, sans-serif', fontSize: 22, marginBottom: '2rem' }}> {price} </Typography>
+                                    <StackCart
+                                        direction="column"
+                                        justifyContent="center"
+                                        alignItems="center"
+                                        spacing={{
+                                            xs: 1,
+                                            sm: 3,
+                                            md: 4,
+                                            lg: 4
+                                        }}
+
+                                    >
+                                        <Img src={img} alt='Content img' />
+                                        <Title> {title} </Title>
+                                        <Text> {text} </Text>
+                                        <Price> {price} </Price>
+                                    </StackCart>
                                 </SwiperSlide>
                             )
                         })
                     }
                 </Swiper>
                 <BoxButton>
-                    <Button href='#contactUs'
-                        style={{
-                            fontFamily: 'Libre Franklin, sans-serif',
-                            padding: '0.8rem',
-                            marginRight: '1.5rem',
-                            background: '#024966',
-                        }} size='large' variant="contained"> Get free consultation </Button>
 
-                    <Button href='#about' style={{
-                        fontFamily: 'Libre Franklin, sans-serif',
-                        padding: '0.8rem',
-                        background: 'none',
-                        color: 'white',
-                        border: '2px solid white',
-                    }} variant="outlined"> About Us </Button>
+                    <ButtonGet href='#contactUs' size='large' variant="contained">
+                        Get free consultation
+                    </ButtonGet>
+
+                    <ButtonAbout href='#about' variant="outlined">
+                        About Us
+                    </ButtonAbout>
                 </BoxButton>
             </BoxMain>
         </Box >
     )
 }
 
-export default Services
+export default Services2

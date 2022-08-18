@@ -90,7 +90,7 @@ const StackLink = styled(Stack)(({ theme }) => ({
   }
 }))
 
-const BoxClose = styled(Box)(({theme}) => ({
+const BoxClose = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'flex-end',
@@ -107,7 +107,7 @@ const Hamburger = styled(IconButton)(({ theme }) => ({
   }
 }))
 
-const Close = styled(IconButton)(({theme}) => ({
+const Close = styled(IconButton)(({ theme }) => ({
   color: 'white',
   fontSize: 25,
   border: '1px solid transparent',

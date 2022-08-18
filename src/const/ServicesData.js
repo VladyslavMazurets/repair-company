@@ -23,7 +23,7 @@ const SwiperData = [
 
     {
         img: Img3,
-        title: "Сalculation Of The Estimate",
+        title: "Calculation Of The Estimate",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in tincidunt quam, id venenatis orci. Nam nec nisl at tortor lacinia sagittis. Mauris tempor tortor vitae nisl facilisis tincidunt.",
         price: " fully Free "
     },

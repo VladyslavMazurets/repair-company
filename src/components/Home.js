@@ -5,82 +5,145 @@ import HomeImg from '../../src/assets/homeremont.jpg';
 
 const BoxHome = styled(Box)({
     background: 'url(' + HomeImg + ')',
-    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'repeat',
     backgroundSize: 'cover',
+
     height: '920px'
 })
 
-const BoxMain = styled(Box)({
-    position: 'absolute',
+const BoxMain = styled(Box)(({ theme }) => ({
+    position: 'relative',
     margin: '0 auto',
     padding: '2rem',
-    top: '25%',
-    left: '15%',
+    top: '15%',
     width: '75%',
-})
 
-const BoxWeDo = styled(Box)({
-    position: 'relative',
+    [theme.breakpoints.down(1300)]: {
+        right: '5%'
+    },
+
+    [theme.breakpoints.down(1024)]: {
+        right: '5%',
+        top: '20%'
+    },
+
+    [theme.breakpoints.down("md")]: {
+        width: '86%',
+        right: '0%'
+    },
+
+    [theme.breakpoints.down("sm")]: {
+        width: '90%',
+        right: '0%'
+    }
+}))
+
+const BoxWeDo = styled(Box)(({ theme }) => ({
     width: '35%',
     display: 'flex',
     justifyContent: 'flex-start',
-    flexDirection: 'column'
-})
+    flexDirection: 'column',
+
+    [theme.breakpoints.down(1370)]: {
+        width: '50%'
+    },
+
+    [theme.breakpoints.down(990)]: {
+        width: '60%'
+    },
+
+    [theme.breakpoints.down(730)]: {
+        width: '80%'
+    },
+
+    [theme.breakpoints.down("sm")]: {
+        width: '100%'
+    },
+}))
 
 const BoxButton = styled(Box)({
     display: 'flex',
     direction: 'row',
-    marginTop: '45px'
+    marginTop: '40px'
 })
 
-const TypographyWeDo = styled(Typography)({
-    fontFamily: 'Popins, sans-seriff',
-    fontWeight: 700,
+const TypographyWeDo = styled(Typography)(({ theme }) => ({
+    fontFamily: 'Libre Franklin',
     fontSize: 70,
-    color: '#1c6785',
-    textShadow: '5px 1px 2px black, 0 0 1em white, 0 0 0.2em white',
+    color: 'white',
+    textShadow: '5px 1px 2px black, 0 0 1em black',
 
-    textAlign: 'left'
-})
+    [theme.breakpoints.down(1370)]: {
+        fontSize: 65
+    },
 
-const TypographyWeDoItem = styled(Typography)({
-    fontFamily: 'Popins, sans-serif',
-    fontWeight: 700,
+    [theme.breakpoints.down(1024)]: {
+        fontSize: 60,
+    },
+
+    [theme.breakpoints.down(460)]: {
+        fontSize: 50,
+    }
+}))
+
+const TypographyWeDoItem = styled(Typography)(({ theme }) => ({
+    fontFamily: 'Libre Franklin',
     fontSize: 22,
-    color: '#1c6785',
-    textShadow: '1px 1px 10px white, 0 0 1em white, 0 0 0.3em white',
+    color: 'white',
+    textShadow: '5px 0 50px black',
 
-    textAlign: 'left'
+    [theme.breakpoints.down(1370)]: {
+        fontSize: 20
+    },
 
-})
+    [theme.breakpoints.down(1024)]: {
+        fontSize: 19,
+    },
 
-const ButtonServ = styled(Button)({
-    fontFamily: 'Popins, sans-serif',
-    fontWeight: 'bold',
+    [theme.breakpoints.down(460)]: {
+        fontSize: 17,
+    }
+}))
+
+const ButtonServ = styled(Button)(({ theme }) => ({
+    fontFamily: 'Libre Franklin',
     marginRight: '1.5rem',
     background: '#0f2b36',
-    letterSpacing: '0.15em',
+    letterSpacing: '0.1em',
     transition: '0.5s',
 
     "&:hover": {
         background: '#1c6785',
-    }
-})
+    },
 
-const ButtonCont = styled(Button)({
+    [theme.breakpoints.down(460)]: {
+        marginRight: '5px',
+        padding: '5px 10px',
+        fontSize: '10px',
+
+    }
+}))
+
+const ButtonCont = styled(Button)(({ theme }) => ({
     background: 'none',
-    fontFamily: 'Popins, sans-serif',
-    letterSpacing: '0.15em',
-    fontWeight: 900,
-    color: '#0f2b36',
+    fontFamily: 'Libre Franklin',
+    letterSpacing: '0.1em',
+    color: 'white',
     border: '2px solid #0f2b36',
     transition: '0.5s',
 
     "&:hover": {
         border: '2px solid',
-        background: 'white',
+        background: '#0f2b36',
+    },
+
+    [theme.breakpoints.down(460)]: {
+        padding: '5px 10px',
+        fontSize: '10px',
+
     }
-})
+}))
 
 function Home() {
     return (
