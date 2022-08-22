@@ -3,13 +3,17 @@ import { Box } from '@mui/system';
 import { Typography, styled } from '@mui/material';
 
 
-const BoxHeader = styled(Box)({
+const BoxHeader = styled(Box)(({theme}) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   textAlign: 'center',
-  padding: '2rem 1rem 1rem 1rem'
-});
+  padding: '2rem 1rem 1rem 1rem',
+
+  [theme.breakpoints.down(380)]: {
+    padding: 0
+  },
+}));
 
 const Header = styled(Typography)(({ theme }) => ({
   fontFamily: 'Libre Franklin',

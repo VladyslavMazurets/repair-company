@@ -25,6 +25,10 @@ const BoxMain = styled(Box)(({ theme }) => ({
 
     [theme.breakpoints.down("sm")]: {
         width: '100%',
+    },
+
+    [theme.breakpoints.down(380)]: {
+        padding: '1,2rem'
     }
 }))
 
@@ -35,11 +39,16 @@ const StackCart = styled(Stack)({
 
 })
 
-const BoxButton = styled(Box)({
+const BoxButton = styled(Box)(({ theme }) => ({
     display: 'flex',
     justifyContent: 'center',
-    marginBottom: '1rem'
-});
+    marginBottom: '3.5rem',
+
+    [theme.breakpoints.down(360)]: {
+        display: 'flex',
+        flexDirection: 'column'
+    }
+}));
 
 const Img = styled("img")(({ theme }) => ({
     width: 100,
@@ -116,7 +125,13 @@ const Price = styled(Typography)(({ theme }) => ({
 const ButtonGet = styled(Button)(({ theme }) => ({
     fontFamily: 'Libre Franklin',
     marginRight: '1.5rem',
-    background: '#024966',
+    background: '#0f2b36',
+    letterSpacing: '0.1em',
+    transition: '0.5s',
+
+    "&:hover": {
+        background: '#1c6785',
+    },
 
     [theme.breakpoints.down("sm")]: {
         marginRight: '1.5rem',
@@ -129,14 +144,26 @@ const ButtonGet = styled(Button)(({ theme }) => ({
         padding: '5px',
         fontSize: '10px',
 
+    },
+
+    [theme.breakpoints.down(360)]: {
+        margin: 0,
+        marginBottom: '0.5rem',
     }
 }))
 
 const ButtonAbout = styled(Button)(({ theme }) => ({
     fontFamily: 'Libre Franklin',
     background: 'none',
+    letterSpacing: '0.1em',
     color: 'white',
     border: '1px solid #0f2b36',
+    transition: '0.5s',
+
+    "&:hover": {
+        border: '1px solid',
+        background: 'skyblue',
+    },
 
     [theme.breakpoints.down("sm")]: {
         padding: '10px',
@@ -178,10 +205,8 @@ function Services2() {
                             slidesPerView: 3,
                             slidesPerGroup: 3,
                         }
-
                     }}
                     className="mySwiper"
-
                     style={{
                         padding: ' 0 3rem 3.5rem 3rem'
                     }}

@@ -1,12 +1,12 @@
 
 .swiper-button-prev::after {
-    padding: 0 0 3rem 1rem;
-    color: white;
+    padding: 0 1rem 3rem 0;
+    color: #0f2b36;
 }
 
-.swiper-button-prev::after {
-    padding: 0 1rem 3rem 0;
-    color: white;
+.swiper-button-next::after {
+    padding: 0 0 3rem 1rem;
+    color: #0f2b36;
 }
 
 .swiper-button-next:hover::after {
@@ -17,4 +17,10 @@
 .swiper-button-prev:hover::after {
     color: black;
     transition: 0.25s;
+}
+
+@media screen and (max-width: 600px) {
+    .swiper-button-prev::after {
+        font-size: 2px;
+    }
 }

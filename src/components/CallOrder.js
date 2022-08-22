@@ -6,32 +6,64 @@ import Swal from 'sweetalert2'
 
 import CallBg from '../assets/order_background.jpg';
 
-const BoxBg = styled(Box)({
+const BoxBg = styled(Box)(({ theme }) => ({
     backgroundImage: 'url(' + CallBg + ')',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: '100% 30%',
-    backgroundSize: '100%',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'repeat',
+    backgroundSize: 'cover',
 
-    width: '100%',
-    height: '800px'
-})
+    height: '950px',
 
-const BoxMain = styled(Box)({
+    [theme.breakpoints.down(380)]: {
+        height: '750px',
+    }
+}))
+
+const BoxMain = styled(Box)(({ theme }) => ({
     position: 'relative',
-    margin: '0 auto',
     padding: '2rem',
-    width: '75%',
-    top: '10%',
-})
+    left: '10%',
+    top: '20%',
 
-const BoxContent = styled(Box)({
+    [theme.breakpoints.down(1200)]: {
+        left: '5%',
+        top: '23%'
+    },
+
+    [theme.breakpoints.down(450)]: {
+        left: 0,
+        top: '15%'
+    },
+
+    [theme.breakpoints.down()]: {
+
+    }
+}))
+
+const BoxContent = styled(Box)(({ theme }) => ({
     position: 'relative',
     width: '35%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'start',
     textAlign: 'left',
-})
+
+    [theme.breakpoints.down(1200)]: {
+        width: '45%'
+    },
+
+    [theme.breakpoints.down(900)]: {
+        width: '55%'
+    },
+
+    [theme.breakpoints.down(700)]: {
+        width: '70%'
+    },
+
+    [theme.breakpoints.down(450)]: {
+        width: '100%'
+    }
+}))
 
 const BoxSend = styled(Box)({
     marginTop: '2rem',
@@ -40,17 +72,41 @@ const BoxSend = styled(Box)({
     width: '100%'
 })
 
-const Header = styled(Typography)({
-    fontFamily: 'Popins, sans-serif',
-    fontWeight: 700,
+const Header = styled(Typography)(({ theme }) => ({
+    fontFamily: 'Libre Franklin',
     fontSize: 54,
-})
 
-const Content = styled(Typography)({
-    fontFamily: 'Popins',
-    fontWeight: 400,
+    [theme.breakpoints.down(1200)]: {
+        fontSize: 45
+    },
+
+    [theme.breakpoints.down(700)]: {
+        fontSize: 30
+
+    },
+
+    [theme.breakpoints.down()]: {
+
+    }
+}))
+
+const Content = styled(Typography)(({ theme }) => ({
+    fontFamily: 'Libre Franklin',
     fontSize: 22,
-})
+
+    [theme.breakpoints.down(1200)]: {
+        fontSize: 17
+    },
+
+    [theme.breakpoints.down(700)]: {
+        fontSize: 15
+
+    },
+
+    [theme.breakpoints.down()]: {
+
+    }
+}))
 
 const ButtonOrder = styled(Button)({
     width: '100%',
@@ -78,7 +134,7 @@ function CallOrder() {
                 console.log(result.text);
                 Swal.fire({
                     icon: 'success',
-                    title: 'Message sent sucessfully'
+                    title: 'Request sent successfully'
                 })
             }, (error) => {
                 console.log(error.text);
@@ -96,9 +152,13 @@ function CallOrder() {
         <BoxBg id="callOrder">
             <BoxMain>
                 <BoxContent>
-                    <Header> There is no one to repair your apartment? </Header>
+                    <Header>
+                        There is no one to repair your apartment?
+                    </Header>
                     <div style={{ background: 'white', height: '3px', margin: '1.5rem 0', width: '15%' }} />
-                    <Content> Fill the form right now and we'll call you back to fix it as soon as possible. </Content>
+                    <Content>
+                        Fill the form right now and we'll call you back to fix it as soon as possible.
+                    </Content>
                     <BoxSend>
                         <form onSubmit={sendPhoneNumber}>
 

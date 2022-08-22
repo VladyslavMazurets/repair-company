@@ -62,11 +62,16 @@ const BoxWeDo = styled(Box)(({ theme }) => ({
     },
 }))
 
-const BoxButton = styled(Box)({
+const BoxButton = styled(Box)(({theme}) => ({
     display: 'flex',
-    direction: 'row',
-    marginTop: '40px'
-})
+    marginTop: '40px',
+
+    [theme.breakpoints.down(360)]: {
+        display: 'flex',
+        flexDirection: 'column',
+        
+    },
+}))
 
 const TypographyWeDo = styled(Typography)(({ theme }) => ({
     fontFamily: 'Libre Franklin',
@@ -111,6 +116,7 @@ const ButtonServ = styled(Button)(({ theme }) => ({
     marginRight: '1.5rem',
     background: '#0f2b36',
     letterSpacing: '0.1em',
+    border: '2px solid #0f2b36',
     transition: '0.5s',
 
     "&:hover": {
@@ -122,7 +128,12 @@ const ButtonServ = styled(Button)(({ theme }) => ({
         padding: '5px 10px',
         fontSize: '10px',
 
-    }
+    },
+
+    [theme.breakpoints.down(360)]: {
+        marginRight: 0,
+        marginBottom: '0.5rem',
+    },
 }))
 
 const ButtonCont = styled(Button)(({ theme }) => ({
