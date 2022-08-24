@@ -38,14 +38,14 @@ const BoxRequest = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   textAlign: 'center',
   flexDirection: 'column',
-  right: '10%',
+  right: '15%',
 
-  [theme.breakpoints.down("md")]: {
-    right: '15%'
+  [theme.breakpoints.down(1000)]: {
+    right: '10%'
   },
 
   [theme.breakpoints.down(660)]: {
-    right: '10%'
+    right: '5%'
   },
 
   [theme.breakpoints.down('sm')]: {
@@ -58,7 +58,7 @@ const RequestHeader = styled(Typography)(({ theme }) => ({
   fontSize: 25,
 
   [theme.breakpoints.down(500)]: {
-    fontSize: '16px'
+    fontSize: 20
   },
 }))
 
@@ -68,7 +68,7 @@ const RequestContent = styled(Typography)(({ theme }) => ({
   margin: '0.5rem 0 2.5rem 0',
 
   [theme.breakpoints.down(500)]: {
-    fontSize: '10px'
+    fontSize: 13
   },
 }))
 
@@ -85,14 +85,14 @@ const ButtonRequest = styled(Button)(({ theme }) => ({
     background: '#1c6785',
   },
 
-  [theme.breakpoints.down("sm")]: {
+  [theme.breakpoints.down(600)]: {
     padding: '8px',
-    fontSize: '13px',
+    fontSize: 10,
   },
 
   [theme.breakpoints.down(460)]: {
     padding: '5px',
-    fontSize: '10px',
+    fontSize: 8,
 
   }
 }))

@@ -90,7 +90,7 @@ const BoxIcon = styled(Box)({
 
 const ButtonSocial = styled(Button)({
     fontFamily: 'Libre Franklin',
-    fontSize: 8,
+    fontSize: 14,
     marginTop: '1rem',
     transition: '0.8s',
 
@@ -120,11 +120,7 @@ const ButtonMail = styled(Button)({
 
 const TypographySocial = styled(Typography)(({ theme }) => ({
     fontFamily: 'Libre Franklin',
-    fontSize: 14,
-
-    [theme.breakpoints.down(1500)]: {
-        fontSize: 8
-    }
+    fontSize: 17,
 }))
 
 const Input = styled(TextField)({
@@ -156,7 +152,7 @@ const Input = styled(TextField)({
 })
 
 const TextArea = styled(TextareaAutosize)({
-    fontSize: '1rem',
+    fontSize: 17,
     width: '100%',
     marginTop: '1rem',
     padding: '1rem',

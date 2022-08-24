@@ -139,7 +139,7 @@ const Text = styled(Typography)(({theme}) => ({
     margin: '1rem 0',
 
     [theme.breakpoints.down(900)]: {
-        fontSize: 12,
+        fontSize: 14,
     },
 
     [theme.breakpoints.down(700)]: {
@@ -152,7 +152,7 @@ const TypoLink = styled(Typography)(({theme}) => ({
     fontSize: 18,
 
     [theme.breakpoints.down(900)]: {
-        fontSize: 15,
+        fontSize: 16,
     },
 }))
 
@@ -161,7 +161,7 @@ const TypoNumber = styled(Typography)(({theme}) => ({
     fontSize: 16,
 
     [theme.breakpoints.down(900)]: {
-        fontSize: 12,
+        fontSize: 14,
     },
 }))
 

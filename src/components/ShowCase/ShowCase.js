@@ -46,79 +46,13 @@ const BoxCarts = styled(Box)({
     alignItems: 'center',
     textAlign: 'center',
     justifyContent: 'center',
-
+    padding: '0.5rem'
 })
 
-const Img = styled("img")(({ theme }) => ({
+const Img = styled("img")({
     margin: '1.5rem',
-    width: 470,
-    height: 350,
-
-    [theme.breakpoints.down(1800)]: {
-    width: 430,
-    height: 310
-},
-
-    [theme.breakpoints.down(1680)]: {
-    width: 400,
-    height: 300
-},
-
-    [theme.breakpoints.down(1560)]: {
-    width: 360,
-    height: 260
-},
-
-    [theme.breakpoints.down(1440)]: {
-    width: 330,
-    height: 230
-},
-
-[theme.breakpoints.down(1350)]: {
-    width: 470,
-    height: 350,
-},
-
-[theme.breakpoints.down(1230)]: {
-    width: 430,
-    height: 310
-},
-
-[theme.breakpoints.down(1140)]: {
-    width: 400,
-    height: 300
-},
-
-[theme.breakpoints.down(1124)]: {
-    width: 470,
-    height: 340,
-},
-
-[theme.breakpoints.down(900)]: {
-    width: 360,
-    height: 260
-},
-
-[theme.breakpoints.down(700)]: {
-    width: 330,
-    height: 230
-},
-
-[theme.breakpoints.down(600)]: {
-    width: 280,
-    height: 180
-},
-
-[theme.breakpoints.down(400)]: {
-    width: 220,
-    height: 160
-},
-
-[theme.breakpoints.down(330)]: {
-    width: 180,
-    height: 100
-},
-}))
+    width: '100%',
+})
 
 const SwiperTitle = styled(Typography)(({theme}) => ({
     fontFamily: 'Libre Franklin',
@@ -134,7 +68,7 @@ const SwiperTitle = styled(Typography)(({theme}) => ({
     },
 
     [theme.breakpoints.down(470)]: {
-        fontSize: 14
+        fontSize: 16
     }
 }))
 
@@ -144,7 +78,7 @@ const SwiperDate = styled(Typography)(({theme}) => ({
     marginBottom: '1rem',
 
     [theme.breakpoints.down(500)]: {
-        fontSize: 9
+        fontSize: 12
     }
 }))
 

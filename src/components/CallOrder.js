@@ -34,10 +34,6 @@ const BoxMain = styled(Box)(({ theme }) => ({
         left: 0,
         top: '15%'
     },
-
-    [theme.breakpoints.down()]: {
-
-    }
 }))
 
 const BoxContent = styled(Box)(({ theme }) => ({
@@ -82,12 +78,7 @@ const Header = styled(Typography)(({ theme }) => ({
 
     [theme.breakpoints.down(700)]: {
         fontSize: 30
-
     },
-
-    [theme.breakpoints.down()]: {
-
-    }
 }))
 
 const Content = styled(Typography)(({ theme }) => ({
@@ -102,17 +93,12 @@ const Content = styled(Typography)(({ theme }) => ({
         fontSize: 15
 
     },
-
-    [theme.breakpoints.down()]: {
-
-    }
 }))
 
 const ButtonOrder = styled(Button)({
     width: '100%',
     background: 'none',
-    fontFamily: 'Popins, sans-serif',
-    fontWeight: 600,
+    fontFamily: 'Libre Franklin',
     color: 'black',
     border: '1px solid black',
     transition: '0.5s',

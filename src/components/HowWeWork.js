@@ -116,11 +116,11 @@ const Text = styled(Typography)(({ theme }) => ({
   },
 
   [theme.breakpoints.down(500)]: {
-    fontSize: 10
+    fontSize: 12
   },
 
   [theme.breakpoints.down(380)]: {
-    fontSize: 9
+    fontSize: 10
   },
 }))
 

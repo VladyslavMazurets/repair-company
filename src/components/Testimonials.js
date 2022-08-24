@@ -78,7 +78,7 @@ const SwiperContent = styled(Typography)(({theme}) => ({
     margin: '2rem auto',
 
     [theme.breakpoints.down(500)]: {
-        fontSize: 12,
+        fontSize: 15,
     },
 }))
 

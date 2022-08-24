@@ -57,7 +57,7 @@ const BoxButton = styled(Box)({
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'center',
-  marginTop: '45px'
+  marginTop: '45px',
 })
 
 const BoxImg = styled(Box)(({ theme }) => ({
@@ -88,13 +88,13 @@ const ButtonCase = styled(Button)(({ theme }) => ({
   },
 
   [theme.breakpoints.down(1000)]: {
-    fontSize: '10px',
+    fontSize: 14,
     marginRight: '.5rem',
     padding: '10px'
   },
 
-  [theme.breakpoints.down(360)]: {
-
+  [theme.breakpoints.down(600)]: {
+    fontSize: 10,
   },
 }))
 
@@ -112,8 +112,12 @@ const ButtonCont = styled(Button)(({ theme }) => ({
   },
 
   [theme.breakpoints.down(1000)]: {
-    fontSize: '10px',
+    fontSize: 10,
     padding: '10px'
+  },
+
+  [theme.breakpoints.down(600)]: {
+    fontSize: 10,
   },
 }))
 
@@ -158,7 +162,7 @@ const Content = styled(Typography)(({ theme }) => ({
   },
 
   [theme.breakpoints.down(1000)]: {
-    fontSize: 10,
+    fontSize: 12,
   },
 }))
 
