@@ -105,16 +105,16 @@ const ButtonMail = styled(Button)({
     padding: '.5rem',
 
     fontFamily: 'Libre Franklin',
-    color: 'black',
-    background: 'skyblue',
+    color: 'white',
+    background: '#64ccf5',
 
-    border: '1px solid transparent',
+    border: '1px solid inherit',
     borderRadius: '0.5rem',
     transition: '0.8s',
 
     "&:hover": {
-        background: 'white',
-        border: '1px solid skyblue'
+        border: '1px solid #0f2b36',
+        background: '#1c6785',
     }
 })
 

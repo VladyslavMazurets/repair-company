@@ -74,6 +74,7 @@ const Img = styled("img")(({ theme }) => ({
 const Title = styled(Typography)(({ theme }) => ({
     fontFamily: 'Libre Franklin',
     fontSize: 25,
+    color: 'black',
 
     [theme.breakpoints.down(1570)]: {
         fontSize: 21
@@ -91,6 +92,7 @@ const Title = styled(Typography)(({ theme }) => ({
 const Text = styled(Typography)(({ theme }) => ({
     fontFamily: 'Libre Franklin',
     fontSize: 18,
+    color: 'black',
 
     [theme.breakpoints.down(1570)]: {
         fontSize: 15
@@ -101,13 +103,14 @@ const Text = styled(Typography)(({ theme }) => ({
     },
 
     [theme.breakpoints.down(470)]: {
-        fontSize: "4px"
+        fontSize: 12
     }
 }))
 
 const Price = styled(Typography)(({ theme }) => ({
     fontFamily: 'Libre Franklin',
     fontSize: 22,
+    color: 'black',
 
     [theme.breakpoints.down(1570)]: {
         fontSize: 19
@@ -154,25 +157,25 @@ const ButtonGet = styled(Button)(({ theme }) => ({
 
 const ButtonAbout = styled(Button)(({ theme }) => ({
     fontFamily: 'Libre Franklin',
-    background: 'none',
+    background: '#64ccf5',
     letterSpacing: '0.1em',
     color: 'white',
-    border: '1px solid #0f2b36',
+    border: '1px solid inherit',
     transition: '0.5s',
 
     "&:hover": {
-        border: '1px solid',
-        background: 'skyblue',
+        border: '1px solid #0f2b36',
+        background: '#1c6785',
     },
 
     [theme.breakpoints.down("sm")]: {
         padding: '10px',
-        fontSize: '13px',
+        fontSize: 13,
     },
 
     [theme.breakpoints.down(460)]: {
         padding: '5px',
-        fontSize: '10px',
+        fontSize: 10,
 
     }
 }))
@@ -217,7 +220,7 @@ function Services() {
                                 <SwiperSlide
                                     key={index}
                                     style={{
-                                        background: '#fafafa',
+                                        background: 'white',
                                         borderRadius: '20px',
                                         height: 'auto'
                                     }}>

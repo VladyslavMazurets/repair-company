@@ -99,15 +99,16 @@ const ButtonCase = styled(Button)(({ theme }) => ({
 }))
 
 const ButtonCont = styled(Button)(({ theme }) => ({
-  background: 'none',
+  background: '#64ccf5',
   fontFamily: 'Libre Franklin',
   letterSpacing: '0.05em',
-  color: '#0f2b36',
-  border: '1px solid #0f2b36',
+  color: 'white',
+  border: '1px solid inherit',
   transition: '0.5s',
 
   "&:hover": {
-    background: 'white',
+    border: '1px solid #0f2b36',
+    background: '#1c6785',
   },
 
   [theme.breakpoints.down(1000)]: {

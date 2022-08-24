@@ -127,6 +127,10 @@ const Title = styled(Typography)(({theme}) => ({
     [theme.breakpoints.down(900)]: {
         fontSize: 17,
     },
+
+    [theme.breakpoints.down(700)]: {
+        marginBottom: '1.5rem'
+    },
 }))
 
 const Text = styled(Typography)(({theme}) => ({
@@ -136,6 +140,10 @@ const Text = styled(Typography)(({theme}) => ({
 
     [theme.breakpoints.down(900)]: {
         fontSize: 12,
+    },
+
+    [theme.breakpoints.down(700)]: {
+        margin: 0
     },
 }))
 

@@ -53,7 +53,7 @@ const BoxRequest = styled(Box)(({ theme }) => ({
   },
 }))
 
-const RequestHeader = styled(Typography)(({theme}) => ({
+const RequestHeader = styled(Typography)(({ theme }) => ({
   fontFamily: 'Libre Franklin',
   fontSize: 25,
 
@@ -62,7 +62,7 @@ const RequestHeader = styled(Typography)(({theme}) => ({
   },
 }))
 
-const RequestContent = styled(Typography)(({theme}) => ({
+const RequestContent = styled(Typography)(({ theme }) => ({
   fontFamily: 'Libre Franklin',
   fontSize: 18,
   margin: '0.5rem 0 2.5rem 0',
@@ -72,28 +72,29 @@ const RequestContent = styled(Typography)(({theme}) => ({
   },
 }))
 
-const ButtonRequest = styled(Button)(({theme}) => ({
-  background: 'none',
+const ButtonRequest = styled(Button)(({ theme }) => ({
+  background: '#64ccf5',
   fontFamily: 'Libre Franklin',
   letterSpacing: '0.1em',
-  color: '#0f2b36',
-  border: '1px solid #0f2b36',
+  color: 'white',
+  border: '1px solid inherit',
   transition: '0.5s',
 
   "&:hover": {
-    background: 'skyblue'
+    border: '1px solid #0f2b36',
+    background: '#1c6785',
   },
 
   [theme.breakpoints.down("sm")]: {
     padding: '8px',
     fontSize: '13px',
-},
+  },
 
-[theme.breakpoints.down(460)]: {
+  [theme.breakpoints.down(460)]: {
     padding: '5px',
     fontSize: '10px',
 
-}
+  }
 }))
 
 const Request = () => {
