@@ -197,7 +197,7 @@ const Img2 = styled("img")(({ theme }) => ({
 export const About = () => {
 
   return (
-    <Box id='about' style={{ background: '#96bed6' }}>
+    <Box id='about' style={{ background: '#b3d6e3' }}>
 
       <BoxMain>
         <Stack

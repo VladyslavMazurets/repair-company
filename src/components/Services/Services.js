@@ -16,7 +16,7 @@ import SubHeading from '../../const/SubHeading';
 
 const BoxMain = styled(Box)(({ theme }) => ({
     margin: '0 auto',
-    padding: '2rem',
+    padding: '5rem 2rem',
     width: '75%',
 
     [theme.breakpoints.down("md")]: {
@@ -177,9 +177,9 @@ const ButtonAbout = styled(Button)(({ theme }) => ({
     }
 }))
 
-function Services2() {
+function Services() {
     return (
-        <Box id='services' style={{ background: '#96bed6' }}>
+        <Box id='services' style={{ background: '#d6e9f0' }}>
             <BoxMain>
 
                 <SubHeading title="Services We Provide" content="Whatever work you need, we can handle with this." />
@@ -258,4 +258,4 @@ function Services2() {
     )
 }
 
-export default Services2
+export default Services

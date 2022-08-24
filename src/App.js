@@ -17,7 +17,6 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
       <Navbar/>
       <Home/>
       <Services/>
@@ -30,14 +29,6 @@ function App() {
       <Testimonials/>
       <ContactUs/>
       <Footer/>
-      <Routes>
-        {/* <Route path="/about" element={<About />}> */}
-          {/* <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} /> */}
-        {/* </Route> */}
-      </Routes>
-    </BrowserRouter>
     </div>
   );
 }

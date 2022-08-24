@@ -1,32 +1,58 @@
 import React from 'react';
-import { Box } from '@mui/system';
-import styled from 'styled-components';
-import { IconButton, Typography, Link } from '@mui/material';
+import { Box, styled } from '@mui/system'
+import { Typography, Link, IconButton } from '@mui/material';
 
 import Companylogo from '../assets/companylogo.png';
 import { BsFacebook, BsInstagram, BsTelegram } from 'react-icons/bs';
-import { SiViber, SiGmail } from 'react-icons/si';
+import { SiViber} from 'react-icons/si';
 
-const BoxMain = styled(Box)({
+const BoxMain = styled(Box)(({ theme }) => ({
     margin: '0 auto',
     padding: '2rem',
     width: '75%',
+
+    [theme.breakpoints.down(1200)]: {
+        width: '85%',
+    },
+
+    [theme.breakpoints.down(1000)]: {
+        width: '95%',
+        padding: '1.5rem'
+    },
+
+    [theme.breakpoints.down(380)]: {
+        padding: '1,2rem'
+    }
+}));
+
+const BoxFooter = styled(Box)(({theme}) => ({
     display: 'flex',
     justifyContent: 'space-between',
-});
 
-const BoxCompany = styled(Box)({
+    [theme.breakpoints.down(700)]: {
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '2rem'
+    },
+}))
+
+const BoxCompany = styled(Box)(({theme}) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
     width: '30%',
 
-});
+    [theme.breakpoints.down(700)]: {
+        alignItems: 'center',
+        textAlign: 'center',
+        width: 'auto'
+    },
+}));
 
-const BoxButton = styled(Box)({
+const BoxLink = styled(Box)({
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'center'
 
 });
@@ -38,109 +64,185 @@ const BoxContact = styled(Box)({
     justifyContent: 'space-evenly'
 });
 
+const BoxNumber = styled(Box)({
+    display: 'flex',
+    flexDirection: 'column',
+    textAlign: 'center'
+})
+
 const BoxSocial = styled(Box)({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'space-evenly',
-    paddingBottom: '1rem'
+    justifyContent: 'space-around',
 });
-
-const Img = styled("img")({
-    width: '120px', 
-    height: '100px', 
-    display: 'block'
-})
 
 const BoxIcon = styled(Box)({
     display: 'flex',
     flexDirection: 'row',
 });
 
+const BoxCreated = styled(Box)(({theme}) => ({
+    display: 'flex',
+    justifyContent: 'space-between',
+
+    [theme.breakpoints.down(700)]: {
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '1rem'
+    },
+}))
+
+const Img = styled("img")(({ theme }) => ({
+    width: '120px',
+    height: '100px',
+    display: 'block',
+
+    [theme.breakpoints.down(1000)]: {
+        width: '100px',
+        height: '80px',
+    },
+}))
+
+const SocialIcon = styled(IconButton)(({theme}) => ({
+    color: '#4086a1',
+    fontSize: 25,
+    marginBottom: '1rem',
+    transition: '0.35s',
+
+    "&:hover": {
+        color: 'white',
+        background: 'none'
+    },
+
+    [theme.breakpoints.down(900)]: {
+        fontSize: 22,
+    },
+}))
+
+const Title = styled(Typography)(({theme}) => ({
+    fontFamily: 'Libre Franklin',
+    fontSize: 20,
+
+    [theme.breakpoints.down(900)]: {
+        fontSize: 17,
+    },
+}))
+
+const Text = styled(Typography)(({theme}) => ({
+    fontFamily: 'Libre Franklin',
+    fontSize: 16,
+    margin: '1rem 0',
+
+    [theme.breakpoints.down(900)]: {
+        fontSize: 12,
+    },
+}))
+
+const TypoLink = styled(Typography)(({theme}) => ({
+    fontFamily: 'Libre Franklin',
+    fontSize: 18,
+
+    [theme.breakpoints.down(900)]: {
+        fontSize: 15,
+    },
+}))
+
+const TypoNumber = styled(Typography)(({theme}) => ({
+    fontFamily: 'Libre Franklin',
+    fontSize: 16,
+
+    [theme.breakpoints.down(900)]: {
+        fontSize: 12,
+    },
+}))
+
+const TypoCreated = styled(Typography)(({theme}) => ({
+    fontFamily: 'Libre Franklin',
+    fontSize: 18,
+
+    [theme.breakpoints.down(900)]: {
+        fontSize: 16,
+    },
+}))
 
 function Footer() {
 
     return (
         <Box style={{ background: '#d6e9f0' }}>
             <BoxMain>
-
-                <BoxCompany>
-                    <Img src={Companylogo} alt='Company Logo'/>
-                    <Typography> MEO company </Typography>
-                    <Typography style={{ fontSize: '16px', fontFamily: 'Popins', marginTop: '0.5rem' }}>
-                        MEO company is a company that has been installing and renovating apartments in Kyiv & Kyiv region for 10 years.
-                    </Typography>
-                </BoxCompany>
-
-                <BoxButton>
-                    <Link href="#about" color="inherit" underline="hover" style={{ marginBottom: '0.8rem'}}  >
-                        <Typography> About us </Typography>
-                    </Link>
-                    <Link href="#services" color="inherit" underline="hover" style={{ marginBottom: '0.8rem'}}  >
-                        <Typography> Our Services </Typography>
-                    </Link>
-                    <Link href="#showCase" color="inherit" underline="hover" style={{ marginBottom: '0.8rem'}}  >
-                        <Typography> Showcase </Typography>
-                    </Link>
-                    <Link href="#testimonials" color="inherit" underline="hover" style={{ marginBottom: '0.8rem'}} >
-                        <Typography> Testimonials </Typography>
-                    </Link>
-                    <Link href="#contactUs" color="inherit" underline="hover">
-                        <Typography> Contacts </Typography>
-                    </Link>
-                </BoxButton>
-
-                <BoxContact>
-                    <Box>
-                        <Typography> Contact Us </Typography>
-                    </Box>
-
-                    <Box style={{ display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
-                        <Link href='tel:+380978975064' color="inherit" underline="hover" style={{ marginBottom: '0.5rem'}}>
-                            <Typography> +380 97 897 50 64 </Typography>
+                <BoxFooter>
+                    <BoxCompany>
+                        <Link href="#">
+                            <Img src={Companylogo} alt='Company Logo' />
                         </Link>
-                        <Link href='tel:+380978975064' color="inherit" underline="hover" style={{ marginBottom: '0.5rem'}}>
-                            <Typography> +380 97 897 50 64 </Typography>
-                        </Link>
-                        <Link href='mailto:ogidj88@gmail.com' color="inherit" underline="hover">
-                            <Typography> ogidj88@gmail.com </Typography>
-                        </Link>
-                    </Box>
-                </BoxContact>
+                        <Title> MEO company </Title>
+                        <Text>
+                            MEO company is a company that has been installing and renovating apartments in Kyiv & Kyiv region for 10 years.
+                        </Text>
+                    </BoxCompany>
 
-                <BoxSocial>
-                    <Box>
-                        <Typography> Follow Us </Typography>
-                    </Box>
-                    <BoxIcon>
-                        <IconButton aria-label='facebook.com' onClick={() => window.open('https://www.facebook.com/')}>
-                            <BsFacebook style={{ color: '#74b6cf' }} />
-                        </IconButton >
-                        <IconButton aria-label='instagram.com' onClick={() => window.open('https://instagram.com/')}>
-                            <BsInstagram style={{ color: '#74b6cf' }} />
-                        </IconButton >
-                        <IconButton aria-label='telegram.org' onClick={() => window.open('https://web.telegram.org/')}>
-                            <BsTelegram style={{ color: '#74b6cf' }} />
-                        </IconButton >
-                        <IconButton aria-label='viber.com' onClick={() => window.open('https://www.viber.com/')}>
-                            <SiViber style={{ color: '#74b6cf' }} />
-                        </IconButton >
-                        <IconButton aria-label='google.com' onClick={() => window.open('https://mail.google.com/')}>
-                            <SiGmail style={{ color: '#74b6cf' }} />
-                        </IconButton >
-                    </BoxIcon>
-                </BoxSocial>
+                    <BoxLink>
+                        <Link href="#about" color="inherit" underline="hover" style={{ marginBottom: '0.8rem' }}  >
+                            <TypoLink> About us </TypoLink>
+                        </Link>
+                        <Link href="#services" color="inherit" underline="hover" style={{ marginBottom: '0.8rem' }}  >
+                            <TypoLink> Our Services </TypoLink>
+                        </Link>
+                        <Link href="#showCase" color="inherit" underline="hover" style={{ marginBottom: '0.8rem' }}  >
+                            <TypoLink> Showcase </TypoLink>
+                        </Link>
+                        <Link href="#testimonials" color="inherit" underline="hover" style={{ marginBottom: '0.8rem' }} >
+                            <TypoLink> Testimonials </TypoLink>
+                        </Link>
+                        <Link href="#contactUs" color="inherit" underline="hover">
+                            <TypoLink> Contacts </TypoLink>
+                        </Link>
+                    </BoxLink>
+
+                    <BoxContact>
+                        <Title> Contact Us </Title>
+                        <BoxNumber>
+                            <Link href='tel:+380978975064' color="inherit" underline="hover" style={{ marginBottom: '0.5rem' }}>
+                                <TypoNumber> +380 97 897 50 64 </TypoNumber>
+                            </Link>
+                            <Link href='tel:+380978975064' color="inherit" underline="hover" style={{ marginBottom: '0.5rem' }}>
+                                <TypoNumber> +380 97 897 50 64 </TypoNumber>
+                            </Link>
+                            <Link href='mailto:ogidj88@gmail.com' color="inherit" underline="hover">
+                                <TypoNumber> ogidj88@gmail.com </TypoNumber>
+                            </Link>
+                        </BoxNumber>
+                    </BoxContact>
+
+                    <BoxSocial>
+                        <Title> Follow Us </Title>
+                        <BoxIcon>
+                            <SocialIcon aria-label='facebook.com' onClick={() => window.open('https://www.facebook.com/profile.php?id=100001731765715')}>
+                                <BsFacebook />
+                            </SocialIcon >
+                            <SocialIcon aria-label='instagram.com' onClick={() => window.open('https://www.instagram.com/evgenmazurets/')}>
+                                <BsInstagram />
+                            </SocialIcon >
+                            <SocialIcon aria-label='telegram.org' onClick={() => window.open('https://web.telegram.org/k/#555445824')}>
+                                <BsTelegram />
+                            </SocialIcon >
+                            <SocialIcon aria-label='viber.com' onClick={() => window.open('https://www.viber.com/')}>
+                                <SiViber />
+                            </SocialIcon >
+                        </BoxIcon>
+                    </BoxSocial>
+                </BoxFooter>
+
+                <div style={{ background: 'black', height: '1px', margin: '1rem 0' }} />
+
+                <BoxCreated>
+                    <TypoCreated> © Created by Vladyslav Mazurets</TypoCreated>
+                    <TypoCreated> All rights Reserved </TypoCreated>
+                </BoxCreated>
+
             </BoxMain>
 
-            <Box style={{ margin: '0 auto', paddingBottom: '2rem', width: '75%' }}>
-                <Box>
-                    <div style={{ background: 'black', height: '1px', margin: '1rem 0' }} />
-                </Box>
-                <Box style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography> © Created by Vladyslav Mazurets</Typography>
-                    <Typography> All rights Reserved </Typography>
-                </Box>
-            </Box>
 
         </Box>
     )

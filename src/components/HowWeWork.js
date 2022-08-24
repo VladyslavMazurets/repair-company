@@ -127,7 +127,7 @@ const Text = styled(Typography)(({ theme }) => ({
 function HowWeWork() {
   return (
 
-    <Box style={{ background: '#85aec7' }}>
+    <Box style={{ background: '#b3d6e3' }}>
       <BoxMain>
 
         <SubHeading title="How We Work" content="Need a apartment repair? Contact us, and we'll do the work" />

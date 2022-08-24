@@ -41,7 +41,7 @@ const HeaderItm = styled(Typography)(({ theme }) => ({
   margin: '0.3rem 0 1.5rem 0',
 
   [theme.breakpoints.down(1024)]: {
-    fontSize: 20
+    fontSize: 18
   },
   [theme.breakpoints.down(770)]: {
     fontSize: 16
