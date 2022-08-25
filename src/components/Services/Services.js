@@ -104,7 +104,7 @@ const Text = styled(Typography)(({ theme }) => ({
         fontSize: 15
     },
 
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down(600)]: {
         fontSize: 14
     },
 
@@ -122,12 +122,12 @@ const Price = styled(Typography)(({ theme }) => ({
         fontSize: 19
     },
 
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down(600)]: {
         fontSize: 18
     },
 
     [theme.breakpoints.down(470)]: {
-        fontSize: 10
+        fontSize: 14
     }
 }))
 
