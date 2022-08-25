@@ -3,9 +3,9 @@ import { Box, styled } from '@mui/system'
 import { Typography } from '@mui/material';
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import ShowCaseBg from '../../assets/schowcase_bg.jpg';
-import SubHeading from '../../const/SubHeading';
-import ShowCaseData from '../../const/ShowCaseData';
+import ShowCaseBg from '../assets/schowcase_bg.jpg';
+import SubHeading from '../const/SubHeading';
+import ShowCaseData from '../const/ShowCaseData';
 
 // Import Swiper styles
 import "swiper/css";
@@ -56,6 +56,7 @@ const Img = styled("img")({
 
 const SwiperTitle = styled(Typography)(({theme}) => ({
     fontFamily: 'Libre Franklin',
+    fontWeight: 600,
     fontSize: 22,
     marginBottom: '0.5rem',
 

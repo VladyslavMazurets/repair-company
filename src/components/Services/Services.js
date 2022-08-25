@@ -19,11 +19,11 @@ const BoxMain = styled(Box)(({ theme }) => ({
     padding: '5rem 2rem',
     width: '75%',
 
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down(900)]: {
         width: '90%',
     },
 
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down(600)]: {
         width: '100%',
     },
 
@@ -68,11 +68,16 @@ const Img = styled("img")(({ theme }) => ({
     [theme.breakpoints.down(470)]: {
         width: 60,
         height: 60
+    },
+
+    [theme.breakpoints.down(450)]: {
+        display: 'none'
     }
 }))
 
 const Title = styled(Typography)(({ theme }) => ({
     fontFamily: 'Libre Franklin',
+    fontWeight: 600,
     fontSize: 25,
     color: 'black',
 
@@ -80,12 +85,13 @@ const Title = styled(Typography)(({ theme }) => ({
         fontSize: 21
     },
 
-    [theme.breakpoints.down("sm")]: {
-        fontSize: 20
+    [theme.breakpoints.down(600)]: {
+        fontSize: 20,
+        paddingBottom: '0.7rem'
     },
 
     [theme.breakpoints.down(470)]: {
-        fontSize: 17
+        fontSize: 17,        
     }
 }))
 

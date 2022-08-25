@@ -12,6 +12,8 @@ const BoxBg = styled(Box)(({ theme }) => ({
     backgroundRepeat: 'repeat',
     backgroundSize: 'cover',
 
+    display: 'flex',
+    alignItems: 'center',
     height: '950px',
 
     [theme.breakpoints.down(380)]: {
@@ -20,43 +22,44 @@ const BoxBg = styled(Box)(({ theme }) => ({
 }))
 
 const BoxMain = styled(Box)(({ theme }) => ({
-    position: 'relative',
     padding: '2rem',
-    left: '10%',
-    top: '20%',
+    marginLeft: '13rem',
 
-    [theme.breakpoints.down(1200)]: {
-        left: '5%',
-        top: '23%'
+    [theme.breakpoints.down(1400)]: {
+        marginLeft: '6rem'
     },
 
-    [theme.breakpoints.down(450)]: {
-        left: 0,
-        top: '15%'
+    [theme.breakpoints.down(900)]: {
+        marginLeft: '3rem'
     },
+
+    [theme.breakpoints.down(500)]: {
+        marginLeft: '1rem'
+    },
+
 }))
 
 const BoxContent = styled(Box)(({ theme }) => ({
     position: 'relative',
-    width: '35%',
+    width: '60%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'start',
     textAlign: 'left',
 
-    [theme.breakpoints.down(1200)]: {
-        width: '45%'
-    },
-
-    [theme.breakpoints.down(900)]: {
+    [theme.breakpoints.down(1600)]: {
         width: '55%'
     },
 
-    [theme.breakpoints.down(700)]: {
+    [theme.breakpoints.down(900)]: {
         width: '70%'
     },
 
-    [theme.breakpoints.down(450)]: {
+    [theme.breakpoints.down(700)]: {
+        width: '90%'
+    },
+
+    [theme.breakpoints.down(500)]: {
         width: '100%'
     }
 }))
@@ -70,6 +73,7 @@ const BoxSend = styled(Box)({
 
 const Header = styled(Typography)(({ theme }) => ({
     fontFamily: 'Libre Franklin',
+    fontWeight: 600,
     fontSize: 54,
 
     [theme.breakpoints.down(1200)]: {

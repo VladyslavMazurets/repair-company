@@ -8,7 +8,7 @@ import About from "./components/About";
 import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
 import Request from "./components/Request";
 import CallOrder from "./components/CallOrder";
-import ShowCase from "./components/ShowCase/ShowCase";
+import ShowCase from "./components/ShowCase";
 import Testimonials from './components/Testimonials';
 import ContactUs from "./components/ContactUs";
 import Footer from "./components/Footer";

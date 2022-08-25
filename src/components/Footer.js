@@ -12,11 +12,10 @@ const BoxMain = styled(Box)(({ theme }) => ({
     width: '75%',
 
     [theme.breakpoints.down(1200)]: {
-        width: '85%',
+        width: '100%',
     },
 
     [theme.breakpoints.down(1000)]: {
-        width: '95%',
         padding: '1.5rem'
     },
 
@@ -29,7 +28,7 @@ const BoxFooter = styled(Box)(({theme}) => ({
     display: 'flex',
     justifyContent: 'space-between',
 
-    [theme.breakpoints.down(700)]: {
+    [theme.breakpoints.down(800)]: {
         flexDirection: 'column',
         alignItems: 'center',
         gap: '2rem'
@@ -42,7 +41,7 @@ const BoxCompany = styled(Box)(({theme}) => ({
     justifyContent: 'flex-start',
     width: '30%',
 
-    [theme.breakpoints.down(700)]: {
+    [theme.breakpoints.down(800)]: {
         alignItems: 'center',
         textAlign: 'center',
         width: 'auto'
@@ -86,7 +85,7 @@ const BoxCreated = styled(Box)(({theme}) => ({
     display: 'flex',
     justifyContent: 'space-between',
 
-    [theme.breakpoints.down(700)]: {
+    [theme.breakpoints.down(800)]: {
         flexDirection: 'column',
         alignItems: 'center',
         gap: '1rem'
@@ -128,7 +127,7 @@ const Title = styled(Typography)(({theme}) => ({
         fontSize: 17,
     },
 
-    [theme.breakpoints.down(700)]: {
+    [theme.breakpoints.down(800)]: {
         marginBottom: '1.5rem'
     },
 }))
@@ -142,7 +141,7 @@ const Text = styled(Typography)(({theme}) => ({
         fontSize: 14,
     },
 
-    [theme.breakpoints.down(700)]: {
+    [theme.breakpoints.down(800)]: {
         margin: 0
     },
 }))
@@ -171,6 +170,14 @@ const TypoCreated = styled(Typography)(({theme}) => ({
 
     [theme.breakpoints.down(900)]: {
         fontSize: 16,
+    },
+
+    [theme.breakpoints.down(800)]: {
+        fontSize: 14,
+    },
+
+    [theme.breakpoints.down(500)]: {
+        fontSize: 12,
     },
 }))
 

@@ -112,7 +112,7 @@ const ButtonCont = styled(Button)(({ theme }) => ({
   },
 
   [theme.breakpoints.down(1000)]: {
-    fontSize: 10,
+    fontSize: 14,
     padding: '10px'
   },
 

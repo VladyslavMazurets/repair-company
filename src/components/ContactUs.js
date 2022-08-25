@@ -121,6 +121,10 @@ const ButtonMail = styled(Button)({
 const TypographySocial = styled(Typography)(({ theme }) => ({
     fontFamily: 'Libre Franklin',
     fontSize: 17,
+
+    [theme.breakpoints.down(500)]: {
+        fontSize: 14,
+    }
 }))
 
 const Input = styled(TextField)({

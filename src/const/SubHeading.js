@@ -49,7 +49,7 @@ const HeaderItm = styled(Typography)(({ theme }) => ({
     fontSize: 16
   },
   [theme.breakpoints.down(400)]: {
-    fontSize: 13,
+    fontSize: 15,
   },
 }))
 

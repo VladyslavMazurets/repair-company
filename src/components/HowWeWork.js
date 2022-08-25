@@ -88,6 +88,7 @@ const BoxIcon = styled(Box)(({ theme }) => ({
 
 const Title = styled(Typography)(({ theme }) => ({
   fontFamily: 'Libre Franklin',
+  fontWeight: 600,
   fontSize: 26,
   paddingBottom: '1rem',
 

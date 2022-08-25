@@ -54,13 +54,17 @@ const BoxCarts = styled(Box)(({theme}) => ({
     },
 }))
 
-const Img = styled("img")({
+const Img = styled("img")(({theme}) => ({
     width: '9rem',
     aspectRatio: '1/1',
     overflow: 'hidden',
     borderRadius: '50%',
-    margin: '0 auto 1rem'
-})
+    margin: '0 auto 1rem',
+
+    [theme.breakpoints.down(450)]: {
+        display: 'none'
+    },
+}))
 
 const SwiperName = styled(Typography)(({theme}) => ({
     fontFamily: 'Libre Franklin',
