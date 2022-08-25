@@ -36,7 +36,6 @@ const StackCart = styled(Stack)({
     textAlign: 'center',
     minHeight: '100%',
     margin: '0 2rem',
-
 })
 
 const BoxButton = styled(Box)(({ theme }) => ({
@@ -226,7 +225,7 @@ function Services() {
                                 <SwiperSlide
                                     key={index}
                                     style={{
-                                        background: 'white',
+                                        background: '#fffef0',
                                         borderRadius: '20px',
                                         height: 'auto'
                                     }}>

@@ -8,7 +8,6 @@ const BoxHeader = styled(Box)(({ theme }) => ({
   flexDirection: 'column',
   alignItems: 'center',
   textAlign: 'center',
-  opacity: '0.8',
 
   padding: '2rem 1rem 1rem 1rem',
 
@@ -31,7 +30,7 @@ const Header = styled(Typography)(({ theme }) => ({
   },
 
   [theme.breakpoints.down(400)]: {
-    fontSize: 30,
+    fontSize: 34,
   },
 }));
 
@@ -46,10 +45,10 @@ const HeaderItm = styled(Typography)(({ theme }) => ({
     fontSize: 18
   },
   [theme.breakpoints.down(770)]: {
-    fontSize: 16
+    fontSize: 17
   },
   [theme.breakpoints.down(400)]: {
-    fontSize: 15,
+    fontSize: 16,
   },
 }))
 

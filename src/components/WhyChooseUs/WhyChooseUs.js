@@ -153,7 +153,7 @@ function WhyChooseUs() {
                                     key={index}
                                     style={{
                                         height: 'auto',
-                                        background: '#fafafa',
+                                        background: '#fffef0',
                                         borderTop: '10px solid #64ccf5',
                                     }}>
                                     <BoxCarts>

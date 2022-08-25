@@ -46,9 +46,9 @@ const BoxMain = styled(Box)(({ theme }) => ({
     },
 }))
 
-const BoxSocial = styled(Box)(({theme}) => ({
+const BoxSocial = styled(Box)(({ theme }) => ({
     width: '25%',
-    
+
     [theme.breakpoints.down(1200)]: {
         width: '100%'
     }
@@ -58,7 +58,7 @@ const BoxSocialItem = styled(Box)(({ theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     textAlign: 'center',
-    
+
     marginBottom: '2rem',
     padding: '1.5rem 3rem',
 
@@ -135,7 +135,7 @@ const Input = styled(TextField)({
 
     '& .MuiOutlinedInput-root': {
         borderRadius: '0.5rem',
-        backgroundColor: 'white',
+        backgroundColor: '#fffef0',
 
         '& fieldset': {
             borderColor: '#223d63',
@@ -165,7 +165,7 @@ const TextArea = styled(TextareaAutosize)({
 
     resize: 'none',
     background: 'none',
-    backgroundColor: 'white',
+    background: '#fffef0',
     transition: '0.3s',
 
     "&:hover": {
@@ -227,10 +227,10 @@ function ContactUs() {
                 <SubHeading title='Contact Us' content='Call us or fill out the form below and describe your problem.' />
 
                 <Stack
-                    direction={{xs:'column', sm:'column', md:'column', lg:'row', xl:'row'}}
-                    alignItems={{ lg:"flex-start", xl:'flex-start'}}
+                    direction={{ xs: 'column', sm: 'column', md: 'column', lg: 'row', xl: 'row' }}
+                    alignItems={{ lg: "flex-start", xl: 'flex-start' }}
                     justifyContent="center"
-                    spacing={{md: 8, lg: 10, xl: 15 }}
+                    spacing={{ md: 8, lg: 10, xl: 15 }}
                 >
 
                     <BoxSocial>
