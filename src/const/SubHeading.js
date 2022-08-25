@@ -3,11 +3,13 @@ import { Box } from '@mui/system';
 import { Typography, styled } from '@mui/material';
 
 
-const BoxHeader = styled(Box)(({theme}) => ({
+const BoxHeader = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   textAlign: 'center',
+  opacity: '0.8',
+
   padding: '2rem 1rem 1rem 1rem',
 
   [theme.breakpoints.down(380)]: {

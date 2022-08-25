@@ -1,26 +1,41 @@
-
 .swiper-button-prev::after {
+    font-size: 45px !important;
     padding: 0 1rem 3rem 0;
-    color: #0f2b36;
+    color: hsl(34, 75%, 52%);
 }
 
 .swiper-button-next::after {
+    font-size: 45px !important;
     padding: 0 0 3rem 1rem;
-    color: #0f2b36;
+    color: hsl(34, 75%, 52%);
 }
 
 .swiper-button-next:hover::after {
-    color: black;
+    color: rgb(255, 190, 153);
     transition: 0.25s;
 }
 
 .swiper-button-prev:hover::after {
-    color: black;
+    color: rgb(255, 190, 153);
     transition: 0.25s;
+}
+
+@media screen and (max-width: 800px) {
+    .swiper-button-prev::after {
+        font-size: 35px !important;
+    }
+
+    .swiper-button-next::after {
+        font-size: 35px !important;
+    }
 }
 
 @media screen and (max-width: 600px) {
     .swiper-button-prev::after {
-        font-size: 2px;
+        font-size: 25px !important;
+    }
+
+    .swiper-button-next::after {
+        font-size: 25px !important;
     }
 }

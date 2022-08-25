@@ -186,7 +186,7 @@ const Img2 = styled("img")(({ theme }) => ({
   display: 'block',
   width: '340px',
   height: '250px',
-  border: '0.5rem solid #96bed6',
+  border: '0.5rem solid #b3d6e3',
 
   [theme.breakpoints.down("lg")]: {
     width: '250px',

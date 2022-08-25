@@ -5,7 +5,6 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { CgClose } from 'react-icons/cg';
 import { BsFacebook, BsInstagram, BsTelegram } from 'react-icons/bs';
 
-
 import Companylogo from '../assets/companylogo.png';
 
 const navigationLinks = [
@@ -17,11 +16,11 @@ const navigationLinks = [
 ]
 
 
-const StackLogo = styled(Stack)(({ theme }) => ({
+const StackLogo = styled(Stack)({
   flexGrow: 1,
   flexDirection: 'row',
   alignItems: 'center'
-}))
+})
 
 const StackLink = styled(Stack)(({ theme }) => ({
   flexDirection: 'row',
@@ -252,7 +251,7 @@ export const Navbar = () => {
               <List>
                 {navigationLinks.map((item) => (
                   <ItemList key={item.id}>
-                    <Link color="inherit" underline="none" href={item.href} >
+                    <Link color="inherit" underline="none" onClick={() => setOpen(false)} href={item.href}>
                       <TypographyMenu> {item.name} </TypographyMenu>
                     </Link>
                   </ItemList>

@@ -153,7 +153,7 @@ function WhyChooseUs() {
                                     style={{
                                         height: 'auto',
                                         background: '#fafafa',
-                                        borderTop: '8px solid #3a86b5',
+                                        borderTop: '10px solid #64ccf5',
                                     }}>
                                     <BoxCarts>
                                         <Img src={img} alt='Choose Img' />
