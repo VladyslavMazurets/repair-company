@@ -87,7 +87,7 @@ const Title = styled(Typography)(({ theme }) => ({
 
     [theme.breakpoints.down(600)]: {
         fontSize: 20,
-        paddingBottom: '0.7rem'
+        padding: '0.7rem 0'
     },
 
     [theme.breakpoints.down(470)]: {
